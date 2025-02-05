@@ -8,6 +8,7 @@ Bem vindos ao meu( [Pedro de Oliveira Rosas](https://https://www.linkedin.com/in
 - Script.js - Arquivo Js contendo código em Java Scrip para execução das funções solicitadas no teste prático.
 - Style.css - Arquivo CSS com as configurações e estilização para a página Index.html
 - README.md - Arquivo md do tipo README com informações relevantes para a avaliação do teste prático.
+- dados.json - Arquivo json contendo os valores necessários para a resolução da 3° questão.
 
 # Questões do teste prático
 
@@ -20,9 +21,9 @@ Bem vindos ao meu( [Pedro de Oliveira Rosas](https://https://www.linkedin.com/in
 
 IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 
-3. Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
-   • O menor valor de faturamento ocorrido em um dia do mês;
-   • O maior valor de faturamento ocorrido em um dia do mês;
+3. Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:</br>
+   • O menor valor de faturamento ocorrido em um dia do mês;</br>
+   • O maior valor de faturamento ocorrido em um dia do mês;</br>
    • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
 
 IMPORTANTE:
@@ -31,11 +32,11 @@ a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
 </br>
 b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;
 
-4. Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
-   • SP – R$67.836,43
-   • RJ – R$36.678,66
-   • MG – R$29.229,88
-   • ES – R$27.165,48
+4. Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:</br>
+   • SP – R$67.836,43</br>
+   • RJ – R$36.678,66</br>
+   • MG – R$29.229,88</br>
+   • ES – R$27.165,48</br>
    • Outros – R$19.849,53
 
 Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.
@@ -51,7 +52,8 @@ b) Evite usar funções prontas, como, por exemplo, reverse;
 
 # Abordagem
 
-Para a resolução deste teste decidi por usar as linguagens HTML5, CSS e Javascript já que isso me permite fazer uma apresentação visualmente mais atrativa alem de me permitir demonstrar minha capacidade de raciocínico de forma dinâmica, permitindo imput de valores novos nos campos usados durante a demonstração de resolução e acessível, permitindo que qualquer pessoa possa interagir com a minha abordagem indiferente do nível de conhecimento em programação com facilidade.
+Para a resolução deste teste decidi por usar as linguagens HTML5, CSS e Javascript já que isso me permite fazer uma apresentação visualmente mais atrativa alem de permitir demonstrar minha capacidade de raciocínico de forma dinâmica, permitindo imput de valores novos nos campos usados durante a demonstração de resolução, e acessível por permitir que qualquer pessoa possa interagir com a minha abordagem indiferente do nível de conhecimento em programação com maior facilidade.
+As funções escritas em Java Script podem ser convertidas para outras linguagens fazendo as devidas adaptações na sintaxe demonstrando a versatilidade da lógica utilizada.
 O arquivo Index.html está ospedado no endereço:
 </br>
 Agradeço seu interesse na minha resolução das questões deste teste.
