@@ -13,6 +13,10 @@ body {
   flex-direction: column;
   padding: 5px;
 }
+.alinha-horizontal {
+  display: flex;
+  align-items: center;
+}
 .questao {
   display: flex;
   flex-direction: column;

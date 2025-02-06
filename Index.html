@@ -33,7 +33,45 @@
                 Imprimir(SOMA);<br />
                 Ao final do processamento, qual será o valor da variável SOMA?
             </h4>
-            <div name="solucao1"></div>
+            <div name="solucao1">
+                <div>
+                    <h4>Resposta</h4>
+                    <div>
+                        <div>
+                            Para INDICE = <span id="q1_indice">13</span><br />
+                            Temos SOMA = <span id="q1_soma">78</span>
+                        </div>
+                        <div>
+                            <br />
+                            Escolha um novo valor para INDICE e veja o como o valor de SOMA muda:<br />
+                            * Somente valores numéricos inteiros são reconhecidos, caso o valor definido não seja
+                            inteiro ou numérico o INDICE será definido como 13.<br /><br />
+                            <div class="alinha-horizontal">
+                                <label for="q1_input">Novo valor para INDICE:</label>
+                                <textarea id="q1_input" rows="1" cols="3" maxlength="2" placeholder="00"></textarea>
+                                <button type="submit" id="indice_input" onclick="q1()">CALCULAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Explicação</h4>
+                    <p>
+                        Quando informamos o valor do INDICE para que a função faça o calculo as seguintes etapas vão
+                        acontecer:<br /><br />
+                        1 - Um valor k é criado e definido como zero<br />
+                        2 - Este valor é comparado com o INDICE e sempre que ele for menor será acrescido de 1<br />
+                        3 - Toda vez que a verificação for feita um novo valor, SOMA, será acrescido do valor de k<br />
+                        4 - Assim que o valor de k for igual ao valor INDICE a função retorna o valor de
+                        SOMA<br /><br />
+                        Desta forma podemos determinar qual o valor de SOMA para cada INDICE.<br />
+                        Na questão o valor solicitado para o INDICE = 13 é SOMA = 78.<br /><br />
+                        Para comprovar isso basta repetir os passo listados acima, teremos que:<br /><br />
+                        SOMA = 0+ 1+ 2+ 3+ 4+ 5+ 6+ 7+ 8+ 9+ 10+ 11+ 12, temos então que SOMA = 78.
+                    </p>
+                </div>
+
+            </div>
         </div>
         <div class="questao" name="Q2">
             <h4 name="enunciado2">2. Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre
@@ -44,7 +82,48 @@
                 Esse número pode ser informado através de qualquer entrada de sua preferência ou pode
                 ser previamente definido no código.
             </h4>
-            <div name="solucao2"></div>
+            <div name="solucao2">
+                <div>
+                    <h4>Resposta</h4>
+                    <div>
+                        <div class="centrar-coluna">
+                            <div class="alinha-horizontal">
+                                <label for="q2_input">Valor para teste:</label>
+                                <textarea id="q2_input" rows="1" cols="3" maxlength="3"
+                                    placeholder="000"></textarea><span id="q2_nnumero"></span>
+                            </div>
+                            <button type="submit" id="fibonacci_input" onclick="q2()">Sou da sequência de
+                                Fibonacci???</button>
+                        </div>
+                        * Somente valores numéricos inteiros são reconhecidos, caso o valor definido não seja inteiro ou
+                        numérico ele será definido
+                        como ZERO.<br /><br />
+                        O valor informado <span id="q2_resposta">é da</span> sequência de Fibonacci!<br />
+                        A posição <span id="q2_posi">dele é o 1º</span> na seqência<span id="q2_valor"></span>.<br />
+                        Sequência de Fibonacci até então: &#10627; <span id="q2_sequencia">0</span> &#10628;
+                    </div>
+                </div>
+                <div>
+                    <h4>Explicação</h4>
+                    <p>
+                        Para resolver esta questão basta montar uma função que confere se o número pertence à sequência
+                        de Fibonacci, para fazer isso usei os seguinte passos:<br /><br />
+                        1- Recebemos e verificamos se o valor solitado é número valido e caso não seja definimos ele
+                        igual à ZERO<br />
+                        2- Criamos 4 variáveis para representar o 1° número, 2° número, número seguinte em uma sequência
+                        e posição atual na sequência<br />
+                        3- Comparamos o valor solicitado com a variável para número seguinte da sequência, se o valor
+                        for
+                        menor sabemos que ele está mais próximo do número na posição da variável 2° número<br />
+                        4- Caso o valor solicitado ainda seja maior que o número na posição seguinte da sequência
+                        somamos mais um na posição, informamos que as variáveis do 1º número, 2° número e número
+                        seguinte na sequência agora tem novos valores obedecendo o padrão da sequência de Fibonacci e
+                        repetimos os teste da etapa 3<br />
+                        5- Por ultimo informamos os valores nas posições corretas na página para que o usuário possa ver
+                    </p>
+                </div>
+
+            </div>
         </div>
         <div class="questao" name="Q3">
             <h4 name="enunciado3">3. Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça
@@ -58,7 +137,15 @@
                 b&#10630; Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser
                 ignorados no cálculo da média;
             </h4>
-            <div name="solucao3"></div>
+            <div name="solucao3">
+                <div>
+                    <h4>Resposta</h4>
+                </div>
+                <div>
+                    <h4>Explicação</h4>
+                </div>
+
+            </div>
         </div>
         <div class="questao" name="Q4">
             <h4 name="enunciado4">4. Dado o valor de faturamento mensal de uma distribuidora, detalhado por
@@ -70,7 +157,15 @@
                 • Outros - R$19.849,53<br /><br />
                 Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado
                 teve dentro do valor total mensal da distribuidora.</h4>
-            <div name="solucao4"></div>
+            <div name="solucao4">
+                <div>
+                    <h4>Resposta</h4>
+                </div>
+                <div>
+                    <h4>Explicação</h4>
+                </div>
+
+            </div>
         </div>
         <div class="questao" name="Q5">
             <h4 name="enunciado5">5. Escreva um programa que inverta os caracteres de um string.<br /><br />
@@ -80,10 +175,20 @@
                 <br />
                 b&#10630; Evite usar funções prontas, como, por exemplo, reverse;
             </h4>
-            <div name="solucao5"></div>
+            <div name="solucao5">
+                <div>
+                    <h4>Resposta</h4>
+                </div>
+                <div>
+                    <h4>Explicação</h4>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div name="conclusao"></div>
+    <div class="centrar-coluna" name="conclusao">
+        <h4>Conclusão</h4>
+    </div>
     <div class="centrar-coluna" name="contatos">
         <b>Contatos</b>
         <a class="contato" name="Gmail" href="mailto:pedro.comp.2011@gmail.com"
