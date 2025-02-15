@@ -21,8 +21,15 @@
                 href="https://www.linkedin.com/in/pedro-de-oliveira-rosas-44573a21b/">Pedro de Oliveira
                 Rosas</a>.<br />
             No final desta página você poderá encontrar meus contatos, ficarei feliz em responder quaiquer possíveis
-            dúvidas ou em receber seu "Ola!".
-        </p>
+            dúvidas ou em receber seu "Ola!".<br />
+            <br />
+            AVISO:<br />
+            Algumas das questões tem mais de uma resposta, caso a explicação dada em qualquer questão não esteja clara
+            ou
+            você sinta a necessidade de acompanhar a resolução no código basta ir na página do
+            <a href="https://github.com/8BitsSpike/Target-Sistemas">repositório</a> no github para ter acesso a todos os
+            arquivos.
+        </p><br />
     </div>
     <div class="centrar-coluna" name="teste_pratico">
         <h3><b>Questões</b></h3>
@@ -54,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="explicacao">
                     <h4>Explicação</h4>
                     <p>
                         Quando informamos o valor do INDICE para que a função faça o calculo as seguintes etapas vão
@@ -103,23 +110,23 @@
                         Sequência de Fibonacci até então: &#10627; <span id="q2_sequencia">0</span> &#10628;
                     </div>
                 </div>
-                <div>
+                <div class="explicacao">
                     <h4>Explicação</h4>
                     <p>
                         Para resolver esta questão basta montar uma função que confere se o número pertence à sequência
                         de Fibonacci, para fazer isso usei os seguinte passos:<br /><br />
-                        1- Recebemos e verificamos se o valor solitado é número valido e caso não seja definimos ele
+                        1- Recebemos e verificamos se o valor solicitado é número válido e caso não seja definimos ele
                         igual à ZERO<br />
                         2- Criamos 4 variáveis para representar o 1° número, 2° número, número seguinte em uma sequência
                         e posição atual na sequência<br />
                         3- Comparamos o valor solicitado com a variável para número seguinte da sequência, se o valor
-                        for
-                        menor sabemos que ele está mais próximo do número na posição da variável 2° número<br />
+                        for menor sabemos que ele está mais próximo do número na posição da variável 2° número<br />
                         4- Caso o valor solicitado ainda seja maior que o número na posição seguinte da sequência
                         somamos mais um na posição, informamos que as variáveis do 1º número, 2° número e número
                         seguinte na sequência agora tem novos valores obedecendo o padrão da sequência de Fibonacci e
                         repetimos os teste da etapa 3<br />
-                        5- Por ultimo informamos os valores nas posições corretas na página para que o usuário possa ver
+                        5- Por ultimo, informamos os valores nas posições corretas na página para que o usuário possa
+                        ver
                     </p>
                 </div>
 
@@ -135,16 +142,358 @@
                 a&#10630; Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
                 <br />
                 b&#10630; Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser
-                ignorados no cálculo da média;
+                ignorados no cálculo da média;<br />
             </h4>
+            <div name="tabela_dados">
+                * Para esta questão vai ser necessáro uma tabela com os dados, para que vocês tenham acesso à estes
+                dados
+                vou por a tabela logo abaixo, ela poderá ser editada e os valores vão refleter na resposta.<br /><br />
+                * Os valores inceridos devem ser numéricos, caso não sejam o valor para a data em questão será definido
+                como ZERO.<br /><br />
+                <b>Tabela de valores:</b><br /><br />
+                <div name="area_tabela" class="alinha_tabela">
+                    <div class="celula_dia">
+                        <div name="data_1">dia</div>
+                        <label for="valor_1">1</label>
+                        <textarea id="valor_1" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_2">dia</div>
+                        <label for="valor_2">2</label>
+                        <textarea id="valor_2" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_3">dia</div>
+                        <label for="valor_3">3</label>
+                        <textarea id="valor_3" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_4">dia</div>
+                        <label for="valor_4">4</label>
+                        <textarea id="valor_4" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_5">dia</div>
+                        <label for="valor_5">5</label>
+                        <textarea id="valor_5" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_6">dia</div>
+                        <label for="valor_6">6</label>
+                        <textarea id="valor_6" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_7">dia</div>
+                        <label for="valor_7">7</label>
+                        <textarea id="valor_7" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_8">dia</div>
+                        <label for="valor_8">8</label>
+                        <textarea id="valor_8" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_9">dia</div>
+                        <label for="valor_9">9</label>
+                        <textarea id="valor_9" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_10">dia</div>
+                        <label for="valor_10">10</label>
+                        <textarea id="valor_10" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_11">dia</div>
+                        <label for="valor_11">11</label>
+                        <textarea id="valor_11" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_12">dia</div>
+                        <label for="valor_12">12</label>
+                        <textarea id="valor_12" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_13">dia</div>
+                        <label for="valor_13">13</label>
+                        <textarea id="valor_13" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_14">dia</div>
+                        <label for="valor_14">14</label>
+                        <textarea id="valor_14" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_15">dia</div>
+                        <label for="valor_15">15</label>
+                        <textarea id="valor_15" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_16">dia</div>
+                        <label for="valor_16">16</label>
+                        <textarea id="valor_16" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_17">dia</div>
+                        <label for="valor_17">17</label>
+                        <textarea id="valor_17" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_18">dia</div>
+                        <label for="valor_18">18</label>
+                        <textarea id="valor_18" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_19">dia</div>
+                        <label for="valor_19">19</label>
+                        <textarea id="valor_19" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_20">dia</div>
+                        <label for="valor_20">20</label>
+                        <textarea id="valor_20" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_21">dia</div>
+                        <label for="valor_21">21</label>
+                        <textarea id="valor_21" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_22">dia</div>
+                        <label for="valor_22">22</label>
+                        <textarea id="valor_22" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_23">dia</div>
+                        <label for="valor_23">23</label>
+                        <textarea id="valor_23" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_24">dia</div>
+                        <label for="valor_24">24</label>
+                        <textarea id="valor_24" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_25">dia</div>
+                        <label for="valor_25">25</label>
+                        <textarea id="valor_25" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_26">dia</div>
+                        <label for="valor_26">26</label>
+                        <textarea id="valor_26" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_27">dia</div>
+                        <label for="valor_27">27</label>
+                        <textarea id="valor_27" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_28">dia</div>
+                        <label for="valor_28">28</label>
+                        <textarea id="valor_28" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_29">dia</div>
+                        <label for="valor_29">29</label>
+                        <textarea id="valor_29" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                    <div class="celula_dia">
+                        <div name="data_30">dia</div>
+                        <label for="valor_30">30</label>
+                        <textarea id="valor_30" rows="1" cols="11" maxlength="11" placeholder="000000"></textarea>
+                    </div>
+                </div>
+                <br /><br />
+                Importar valores sugeridos para a questão?:<Button type="submit" id="importa_valores"
+                    onclick="coleta()">Importar?</Button>
+            </div>
             <div name="solucao3">
                 <div>
-                    <h4>Resposta</h4>
+                    <h4>Resposta 1</h4>
+                    Usando ARRAY<br /><br />
+                    <b>*IMPORTANTE!!!*</b><br />
+                    Leia cada explicação para entender as limitações de cada situação quando houver.<br /><br />
+                    <b>PARTE 1 -</b> Sem usar method para achar os valores:<br />
+                    <span id="dia_menor_valor1">O dia *aguardando definição* foi o dia</span> de menor valor de
+                    faturamento no mês com o valor: <span id="menor_valor_dia1">*aguardando definição*</span><br />
+                    <span id="dia_maior_valor1">O dia *aguardando definição* foi o dia</span> de maior valor de
+                    faturamento no mês com o valor: <span id="maior_valor_dia1">*aguardando definição*</span><br />
+                    A média mensal foi de <span id="media_mensal1">*aguardando definição*</span> <span
+                        id="dias_media1">nos dias: *aguardando definição*</span><br /><br />
+                    Calcular os valores:<Button type="submit" id="definir_valores_array1"
+                        onclick="q311()">Calcular?</Button>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
+                        pelo usuário, parar isso usamos os seguintes passos.<br />
+                        O ideal seria fazer uma função separada para isso, mas achei importante que cada resolução refletice devidamente o processo lógico de resolução da questão<br />
+                        <br />
+                        1- Definimos uma função assíncrona que vai usar o method "fetch" para coletar os dados do
+                        arquivo Json no meu repositório.(esse method é bastante úitl e pode ser usada para coletar
+                        informações de APIs)<br />
+                        2- Usamos um loop For para transformar cada entrada de texto em espaço válido para receber os
+                        valores que puxamos.<br />
+                        3- Inserimos os valores nas posições corretas permitindo o uso futuro<br />
+                        No caso do usuário ter definido os valores manualmente iremos verificar assim que a função em sí
+                        for aplicada.<br />
+                        <br />
+                        Essas etapas vão se repetir em todas as respostas para essa questão já que buscar os valores
+                        solicitados é parte da resolução.<br />
+                        <br />
+                        Para resolver está questão sem usar methodos vamos seguir os seguintes passos:<br />
+                        <br />
+                        1- Usando um for loop podemos coletar os valores de cada venda e cada dia armazenando as vendas e os dias em arrays separados<br />
+                        2- Ainda no for loop somamos os valores de todas as vendas e ao final dividimos pelo lenght do array com os valores de venda obtendo assim a média dos valores de venda<br />
+                        3- Fazendo um novo for loop comparamos cada valor do array de vendas com o valor da média o dia dele é anotada em um string<br />
+                        4- Ainda no segundo for loop verificamos se o valor é maior que nosso registro de maior valor de venda, se for ele se torna o novo maior valor de venda e seu dia é registrado, se for igual em valor o dia é concatenado com o dia já registrado e se for menor passa para a próxima etapa<br />
+                        5- Depois de verificar para maior e ainda dentro do for loop o valor é verificado contra o menor valor de venda registrado, se for menor ele se torna o menor valor de venda e seu dia é registrado, se for igual o seu dia é concatenado ao dia já registrado e se for maior nada é feito<br />
+                        6- Encerrado o for loop de verificações iremos identificar as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        <br />
+                        Fazendo o código sem usar methodos podemos customizar bem o que precisamos que seja feito e como queremos nosso resultado, em contrapartida nosso codigo fica longo e um tanto quanto difícil de ler.<br />
+                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega fazer reparos, ou usar como referência no futuro.<br />
+                        Boas práticas de programação são importante em situações assim e o bom uso do recurso do comentário pode ajudar na hora de fazer a manutenção ou refatoração do código.<br />
+                        <br />
+                        Total de linhas usadas no codigo: <b>80</b>    
+                    </p>
                 </div>
                 <div>
-                    <h4>Explicação</h4>
-                </div>
+                    <b>PARTE 2 -</b> Usando o method "sort":<br />
 
+                    <span id="dia_menor_valor2">O dia *aguardando definição* foi o dia</span> de menor valor de
+                    faturamento no mês com o valor: <span id="menor_valor_dia2">*aguardando definição*</span><br />
+                    <span id="dia_maior_valor2">O dia *aguardando definição* foi o dia</span> de maior valor de
+                    faturamento no mês com o valor: <span id="maior_valor_dia2">*aguardando definição*</span><br />
+                    A média mensal foi de <span id="media_mensal2">*aguardando definição*</span> <span
+                        id="dias_media2">nos dias: *aguardando definição*</span><br /><br />
+                    Calcular os valores:<Button type="submit" id="definir_valores_array2"
+                        onclick="q312()">Calcular?</Button>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
+                        pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
+                        <br />
+                        Para resolver está questão sem usar methodos vamos seguir os seguintes passos:<br />
+                        <br />
+                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em arrays separados<br />
+                        2- Ainda no for loop somo os valores de todas as vendas e ao final dividimos pelo lenght do array com os valores de venda obtendo assim a média dos valores de venda<br />
+                        3- Em seguida copio o array com os valores de venda em outro array e usamos o method "slice" para garantir que os dois estão armazenados em locais diferentes<br />
+                        4- Uso o method "sort" para organizar os valores dentro do array segundo uma função de comparação que organiza do menor para o maior valor<br />
+                        5- Identifico o primeiro item do array com os valores como o menor valor de venda e o ultimo item como o maior valor de venda<br />
+                        6- Idenfico os respectivos dias usando o method "indexOf" para usar a referência de posição do array que deixei separado na etapa 3°<br />
+                        7- Uso o method "find" com uma função que testa se o valor é maior que a média para achar a posição do primeiro valor maior que a média<br />
+                        8- Com a posição dele monto um for loop dele até o fim do array de valores de venda organizados e repetindo o processo da etapa 6° mas dessa vez coloco eles num array<br />
+                        9- Repito o processo da etapa 4° organizando os dias do menor para o maior<br />
+                        10- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        <br />
+                        Fazendo o uso de methodos podemos agilizar o desenvolvimento, montando methodos que podem modularizar nosso codigo gastamos menos linhas e fica mais simples de ler embora ainda possa ser um pouco confuso caso estejamos customisando os methodos com funções definidas na hora.<br />
+                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega fazer reparos, ou usar como referência no futuro.<br />
+                        Boas práticas de programação são importante em situações assim, o bom uso do recurso do comentário ajuda bastante na hora de fazer a manutenção ou refatoração do código.<br />
+                        Nesta resolução o uso de methodos ajuda a reduzir o número de linhas, mas sem maiores modificações ou personalização de funções de uso dos methodos só podemos informar 1 único valor de venda menor e maior.<br />
+                        Numa situação onde podem haver mais de um dia com o mesmo valor de venda e que estes podem tanto ser o maior valor de venda ou o menor não é recomendado que só o primeiro(no caso do menor) ou só o ultimo(no caso do maior) dias sejam informados.<br />
+                        A resolução anterior apesar de ser mais longa e mais confusa permite dias de maior e menor venda aparecendo mais de uma vez no mês.<br />
+                        <br />
+                        Total de linhas usadas no codigo: <b>73</b>*se removermos 8 linhas de comentário desce para 65*
+                </div>
+                <div>
+                    <b>PARTE 3 -</b> Usando os methodos "math.min", "math.max" e "forEach":<br />
+
+                    <span id="dia_menor_valor3">O dia *aguardando definição* foi o dia</span> de menor valor de
+                    faturamento no mês com o valor: <span id="menor_valor_dia3">*aguardando definição*</span><br />
+                    <span id="dia_maior_valor3">O dia *aguardando definição* foi o dia</span> de maior valor de
+                    faturamento no mês com o valor: <span id="maior_valor_dia3">*aguardando definição*</span><br />
+                    A média mensal foi de <span id="media_mensal3">*aguardando definição*</span> <span
+                        id="dias_media3">nos dias: *aguardando definição*</span><br /><br />
+                    Calcular os valores:<Button type="submit" id="definir_valores_array3"
+                        onclick="q313()">Calcular?</Button>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
+                        pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
+                        <br />
+                        Para resolver está questão vamos seguir os seguintes passos:<br />
+                        <br />
+                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
+                        2- Usando outro for loop testo os valores dentro dos objetos no array da mesma forma como testei na primeira resolução, comparando os valores com os registrado até termos a lista dos maiores valores, menores valores e valores acima da média.<br />
+                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos venda os itens nas listas de dias estão já em ordem<br />
+                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        <br />
+                        Usando methodos mais adequados as necessidades da situação que estamos enfrentando facilita muito a leitura e o entendimento do codigo.<br />
+                        Ainda é importante o bom uso de comentários no codigo para que fique realmente mais legível.<br />
+                        Essa resolução tem o mesmo problema que a resolução anterior tem, só podemos identicar o primeiro dia de menor vendas e o maior dia de vendas, como comentei antes podemos resolver essa questão editando os methodos e suas funções permitindo mais de um dia de maior venda ou menor venda.<br />
+                        <br />
+                        Total de linhas usadas no codigo: <b>61</b>    
+                    </p>
+                </div>
+                <div>
+                    <h4>Resposta 2</h4>
+                    Usando OBJETO:<br />
+                    <b>*IMPORTANTE!!!*</b><br />
+                    Leia cada explicação para entender as limitações de cada situação quando houver.<br /><br />
+                    <b>PARTE 1 -</b> Sem usar method para achar os valores:<br />
+
+                    <span id="dia_menor_valor4">O dia *aguardando definição* foi o dia</span> de menor valor de
+                    faturamento no mês com o valor: <span id="menor_valor_dia4">*aguardando definição*</span><br />
+                    <span id="dia_maior_valor4">O dia *aguardando definição* foi o dia</span> de maior valor de
+                    faturamento no mês com o valor: <span id="maior_valor_dia4">*aguardando definição*</span><br />
+                    A média mensal foi de <span id="media_mensal4">*aguardando definição*</span> <span
+                        id="dias_media4">nos dias: *aguardando definição*</span><br /><br />
+                    Calcular os valores:<Button type="submit" id="definir_valores_objeto4"
+                        onclick="q321()">Calcular?</Button>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
+                        pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
+                        <br />
+                        Para resolver está questão sem usar method vamos seguir os seguintes passos:<br />
+                        <br />
+                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
+                        2- Usando outro for loop para testar os valores dentro dos objetos no array da mesma forma como testei na primeira resolução, comparando os valores com os registrado até termos a lista dos maiores valores, menores valores e valores acima da média.<br />
+                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos venda teremos os itens nas listas de dias estão já em ordem<br />
+                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        <br />
+                        Usando objetos fica mais simples de identificar os dias e os valores já que eles estão sempre associados um ao outro dentro dos objetos, a leitura fica um pouco mais simples e o resultado já vem organizado em ordem crescente.<br />
+                        Também temos a vantagem de poder identificar e registrar mais de um dia de maior venda e de menor venda deixando a resposta mais completa para o usuário.<br />
+                        Combinando isso com boas práticas de programação e uso correto de comentários temos uma forma bem conveniente de resolver a questão.<br />
+                        <br />
+                        Total de linhas usadas no codigo: <b>77</b>    
+                    </p>
+                </div>
+                <div>
+                    <b>PARTE 2 -</b> Criando methodos e usando o methodo "groupBy": <br />
+
+                    <span id="dia_menor_valor5">O dia *aguardando definição* foi o dia</span> de menor valor de
+                    faturamento no mês com o valor: <span id="menor_valor_dia5">*aguardando definição*</span><br />
+                    <span id="dia_maior_valor5">O dia *aguardando definição* foi o dia</span> de maior valor de
+                    faturamento no mês com o valor: <span id="maior_valor_dia5">*aguardando definição*</span><br />
+                    A média mensal foi de <span id="media_mensal5">*aguardando definição*</span> <span
+                        id="dias_media5">nos dias: *aguardando definição*</span><br /><br />
+                    Calcular os valores:<Button type="submit" id="definir_valores_objeto5"
+                        onclick="q322()">Calcular?</Button>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
+                        pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
+                        <br />
+                        Para resolver está questão vamos seguir os seguintes passos:<br />
+                        <br />
+                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
+                        2- Usando o method "groupBy" e uma função dedicada identificamos e separamos em dois arrays os dias em que a venda é maior que a média no array "sim" e os dias em que a venda é menor que a média no array "não", dentro deles estão os objetos que montamos antes<br />
+                        3- Faço um for loop com os elementos do array "sim" e concatenos os dias para fazer a lista de dias com venda acima da média que já vem em ordem crescente de dia já que o for loop está apontando para o dia e não para o valor de venda<br />
+                        4- Novamente uso o method "sort" e deixo o array inicial em ordem numérica crescente de valor de venda, assim aponto o dia de menor valor de venda e o dia de maior valor de venda e seus valores de venda também.<br />
+                        5- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        <br />
+                        Usando objetos e methodos fica muitos simples de identificar os dias e os valores já que eles estão sempre associados um ao outro dentro dos objetos, a leitura fica mais simples e o resultado já vem organizado em ordem crescente.<br />
+                        Em troca de ser a resposta com menor número de linhas temos a desvantagem, comparada a solução somente com objetos, de não poder identificar e registrar mais de um dia de maior venda e de menor venda deixando a resposta menos completa para o usuário.<br />
+                        Combinando essa praticidade com boas práticas de programação e uso correto de comentários temos uma forma bem conveniente e bem rápida de resolver a questão.<br />
+                        <br />
+                        Total de linhas usadas no codigo: <b>54</b>    
+                    </p>
+                </div>
             </div>
         </div>
         <div class="questao" name="Q4">
@@ -161,7 +510,7 @@
                 <div>
                     <h4>Resposta</h4>
                 </div>
-                <div>
+                <div class="explicacao">
                     <h4>Explicação</h4>
                 </div>
 
@@ -179,7 +528,7 @@
                 <div>
                     <h4>Resposta</h4>
                 </div>
-                <div>
+                <div class="explicacao">
                     <h4>Explicação</h4>
                 </div>
 
@@ -191,20 +540,21 @@
     </div>
     <div class="centrar-coluna" name="contatos">
         <b>Contatos</b>
-        <a class="contato" name="Gmail" href="mailto:pedro.comp.2011@gmail.com"
-            style="background-color: #D14836;color:white;"><img height="20px" width="20px"
+        <a class="contato gmail" name="Gmail" href="mailto:pedro.comp.2011@gmail.com"><img height="20px" width="20px"
+                alt="Gmail"
                 src="https://cdn.iconscout.com/icon/free/png-512/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-vol-3-pack-logos-icons-2944897.png?f=webp&w=512" />Gmail
         </a>
-        <a class="contato" name="Whatsapp" href="https://wa.me/5585999669990"
-            style="background-color: #25D366;color:white;"><img height="20px" width="20px"
+        <a class="contato whatsapp" name="Whatsapp" href="https://wa.me/5585999669990"><img height="20px" width="20px"
+                alt="Whatsapp"
                 src="https://cdn.iconscout.com/icon/free/png-512/free-whatsapp-logo-icon-download-in-svg-png-gif-file-formats--social-media-pack-logos-icons-3147599.png?f=webp&w=512" />Whatsapp
         </a>
-        <a class="contato" name="linkedin" href="https://www.linkedin.com/in/pedro-de-oliveira-rosas-44573a21b/"
-            style="background-color: #0077B5;color:white;"><img height="20px" width="20px"
+        <a class="contato linkedin" name="linkedin"
+            href="https://www.linkedin.com/in/pedro-de-oliveira-rosas-44573a21b/"><img height="20px" width="20px"
+                alt="Linkedin"
                 src="https://cdn.iconscout.com/icon/free/png-512/free-linkedin-logo-icon-download-in-svg-png-gif-file-formats--twitter-instagram-facebook-social-media-pack-logos-icons-7136527.png?f=webp&w=512" />Linkedin
         </a>
-        <a class="contato" name="Instagram" href="https://www.instagram.com/pedro.rosas_31/"
-            style="background-color: #E4405F;color:white;"><img height="20px" width="20px"
+        <a class="contato instagram" name="Instagram" href="https://www.instagram.com/pedro.rosas_31/"><img
+                height="20px" width="20px" alt="Instagram"
                 src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-logo-icon-download-in-svg-png-gif-file-formats--social-media-technology-pack-logos-icons-3147652.png?f=webp&w=512" />Instagram
         </a>
     </div>
