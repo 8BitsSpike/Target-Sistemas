@@ -309,11 +309,12 @@
             </div>
             <div name="solucao3">
                 <div>
-                    <h4>Resposta 1</h4>
-                    Usando ARRAY<br /><br />
+                    <br /><br />
                     <b>*IMPORTANTE!!!*</b><br />
                     Leia cada explicação para entender as limitações de cada situação quando houver.<br /><br />
-                    <b>PARTE 1 -</b> Sem usar method para achar os valores:<br />
+                    <h4>Respostas</h4>
+                    <b>Usando ARRAY:</b><br /><br />
+                    <b>PARTE 1 -</b> Sem usar method para achar os valores:<br /><br />
                     <span id="dia_menor_valor1">O dia *aguardando definição* foi o dia</span> de menor valor de
                     faturamento no mês com o valor: <span id="menor_valor_dia1">*aguardando definição*</span><br />
                     <span id="dia_maior_valor1">O dia *aguardando definição* foi o dia</span> de maior valor de
@@ -327,7 +328,8 @@
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os seguintes passos.<br />
-                        O ideal seria fazer uma função separada para isso, mas achei importante que cada resolução refletice devidamente o processo lógico de resolução da questão<br />
+                        O ideal seria fazer uma função separada para isso, mas achei importante que cada resolução
+                        refletice devidamente o processo lógico de resolução da questão<br />
                         <br />
                         1- Definimos uma função assíncrona que vai usar o method "fetch" para coletar os dados do
                         arquivo Json no meu repositório.(esse method é bastante úitl e pode ser usada para coletar
@@ -343,23 +345,36 @@
                         <br />
                         Para resolver está questão sem usar methodos vamos seguir os seguintes passos:<br />
                         <br />
-                        1- Usando um for loop podemos coletar os valores de cada venda e cada dia armazenando as vendas e os dias em arrays separados<br />
-                        2- Ainda no for loop somamos os valores de todas as vendas e ao final dividimos pelo lenght do array com os valores de venda obtendo assim a média dos valores de venda<br />
-                        3- Fazendo um novo for loop comparamos cada valor do array de vendas com o valor da média o dia dele é anotada em um string<br />
-                        4- Ainda no segundo for loop verificamos se o valor é maior que nosso registro de maior valor de venda, se for ele se torna o novo maior valor de venda e seu dia é registrado, se for igual em valor o dia é concatenado com o dia já registrado e se for menor passa para a próxima etapa<br />
-                        5- Depois de verificar para maior e ainda dentro do for loop o valor é verificado contra o menor valor de venda registrado, se for menor ele se torna o menor valor de venda e seu dia é registrado, se for igual o seu dia é concatenado ao dia já registrado e se for maior nada é feito<br />
-                        6- Encerrado o for loop de verificações iremos identificar as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        1- Usando um for loop podemos coletar os valores de cada venda e cada dia armazenando as vendas
+                        e os dias em arrays separados<br />
+                        2- Ainda no for loop somamos os valores de todas as vendas e ao final dividimos pelo lenght do
+                        array com os valores de venda obtendo assim a média dos valores de venda<br />
+                        3- Fazendo um novo for loop comparamos cada valor do array de vendas com o valor da média o dia
+                        dele é anotada em um string<br />
+                        4- Ainda no segundo for loop verificamos se o valor é maior que nosso registro de maior valor de
+                        venda, se for ele se torna o novo maior valor de venda e seu dia é registrado, se for igual em
+                        valor o dia é concatenado com o dia já registrado e se for menor passa para a próxima
+                        etapa<br />
+                        5- Depois de verificar para maior e ainda dentro do for loop o valor é verificado contra o menor
+                        valor de venda registrado, se for menor ele se torna o menor valor de venda e seu dia é
+                        registrado, se for igual o seu dia é concatenado ao dia já registrado e se for maior nada é
+                        feito<br />
+                        6- Encerrado o for loop de verificações iremos identificar as posições onde as respostas são
+                        passadas e os valores são devidamente apontados para elas<br />
                         <br />
-                        Fazendo o código sem usar methodos podemos customizar bem o que precisamos que seja feito e como queremos nosso resultado, em contrapartida nosso codigo fica longo e um tanto quanto difícil de ler.<br />
-                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega fazer reparos, ou usar como referência no futuro.<br />
-                        Boas práticas de programação são importante em situações assim e o bom uso do recurso do comentário pode ajudar na hora de fazer a manutenção ou refatoração do código.<br />
+                        Fazendo o código sem usar methodos podemos customizar bem o que precisamos que seja feito e como
+                        queremos nosso resultado, em contrapartida nosso codigo fica longo e um tanto quanto difícil de
+                        ler.<br />
+                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega
+                        fazer reparos, ou usar como referência no futuro.<br />
+                        Boas práticas de programação são importante em situações assim e o bom uso do recurso do
+                        comentário pode ajudar na hora de fazer a manutenção ou refatoração do código.<br />
                         <br />
-                        Total de linhas usadas no codigo: <b>80</b>    
+                        Total de linhas usadas no codigo: <b>80</b>
                     </p>
                 </div>
                 <div>
-                    <b>PARTE 2 -</b> Usando o method "sort":<br />
-
+                    <b>PARTE 2 -</b> Usando o method "sort":<br /><br />
                     <span id="dia_menor_valor2">O dia *aguardando definição* foi o dia</span> de menor valor de
                     faturamento no mês com o valor: <span id="menor_valor_dia2">*aguardando definição*</span><br />
                     <span id="dia_maior_valor2">O dia *aguardando definição* foi o dia</span> de maior valor de
@@ -376,29 +391,46 @@
                         <br />
                         Para resolver está questão sem usar methodos vamos seguir os seguintes passos:<br />
                         <br />
-                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em arrays separados<br />
-                        2- Ainda no for loop somo os valores de todas as vendas e ao final dividimos pelo lenght do array com os valores de venda obtendo assim a média dos valores de venda<br />
-                        3- Em seguida copio o array com os valores de venda em outro array e usamos o method "slice" para garantir que os dois estão armazenados em locais diferentes<br />
-                        4- Uso o method "sort" para organizar os valores dentro do array segundo uma função de comparação que organiza do menor para o maior valor<br />
-                        5- Identifico o primeiro item do array com os valores como o menor valor de venda e o ultimo item como o maior valor de venda<br />
-                        6- Idenfico os respectivos dias usando o method "indexOf" para usar a referência de posição do array que deixei separado na etapa 3°<br />
-                        7- Uso o method "find" com uma função que testa se o valor é maior que a média para achar a posição do primeiro valor maior que a média<br />
-                        8- Com a posição dele monto um for loop dele até o fim do array de valores de venda organizados e repetindo o processo da etapa 6° mas dessa vez coloco eles num array<br />
+                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as
+                        vendas e os dias em arrays separados<br />
+                        2- Ainda no for loop somo os valores de todas as vendas e ao final dividimos pelo lenght do
+                        array com os valores de venda obtendo assim a média dos valores de venda<br />
+                        3- Em seguida copio o array com os valores de venda em outro array e usamos o method "slice"
+                        para garantir que os dois estão armazenados em locais diferentes<br />
+                        4- Uso o method "sort" para organizar os valores dentro do array segundo uma função de
+                        comparação que organiza do menor para o maior valor<br />
+                        5- Identifico o primeiro item do array com os valores como o menor valor de venda e o ultimo
+                        item como o maior valor de venda<br />
+                        6- Idenfico os respectivos dias usando o method "indexOf" para usar a referência de posição do
+                        array que deixei separado na etapa 3°<br />
+                        7- Uso o method "find" com uma função que testa se o valor é maior que a média para achar a
+                        posição do primeiro valor maior que a média<br />
+                        8- Com a posição dele monto um for loop dele até o fim do array de valores de venda organizados
+                        e repetindo o processo da etapa 6° mas dessa vez coloco eles num array<br />
                         9- Repito o processo da etapa 4° organizando os dias do menor para o maior<br />
-                        10- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        10- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados
+                        para elas<br />
                         <br />
-                        Fazendo o uso de methodos podemos agilizar o desenvolvimento, montando methodos que podem modularizar nosso codigo gastamos menos linhas e fica mais simples de ler embora ainda possa ser um pouco confuso caso estejamos customisando os methodos com funções definidas na hora.<br />
-                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega fazer reparos, ou usar como referência no futuro.<br />
-                        Boas práticas de programação são importante em situações assim, o bom uso do recurso do comentário ajuda bastante na hora de fazer a manutenção ou refatoração do código.<br />
-                        Nesta resolução o uso de methodos ajuda a reduzir o número de linhas, mas sem maiores modificações ou personalização de funções de uso dos methodos só podemos informar 1 único valor de venda menor e maior.<br />
-                        Numa situação onde podem haver mais de um dia com o mesmo valor de venda e que estes podem tanto ser o maior valor de venda ou o menor não é recomendado que só o primeiro(no caso do menor) ou só o ultimo(no caso do maior) dias sejam informados.<br />
-                        A resolução anterior apesar de ser mais longa e mais confusa permite dias de maior e menor venda aparecendo mais de uma vez no mês.<br />
+                        Fazendo o uso de methodos podemos agilizar o desenvolvimento, montando methodos que podem
+                        modularizar nosso codigo gastamos menos linhas e fica mais simples de ler embora ainda possa ser
+                        um pouco confuso caso estejamos customisando os methodos com funções definidas na hora.<br />
+                        Quanto mais complexa for nossa forma de resolver cada etapa mais dificil fica para um colega
+                        fazer reparos, ou usar como referência no futuro.<br />
+                        Boas práticas de programação são importante em situações assim, o bom uso do recurso do
+                        comentário ajuda bastante na hora de fazer a manutenção ou refatoração do código.<br />
+                        Nesta resolução o uso de methodos ajuda a reduzir o número de linhas, mas sem maiores
+                        modificações ou personalização de funções de uso dos methodos só podemos informar 1 único valor
+                        de venda menor e maior.<br />
+                        Numa situação onde podem haver mais de um dia com o mesmo valor de venda e que estes podem tanto
+                        ser o maior valor de venda ou o menor não é recomendado que só o primeiro(no caso do menor) ou
+                        só o ultimo(no caso do maior) dias sejam informados.<br />
+                        A resolução anterior apesar de ser mais longa e mais confusa permite dias de maior e menor venda
+                        aparecendo mais de uma vez no mês.<br />
                         <br />
                         Total de linhas usadas no codigo: <b>73</b>*se removermos 8 linhas de comentário desce para 65*
                 </div>
                 <div>
-                    <b>PARTE 3 -</b> Usando os methodos "math.min", "math.max" e "forEach":<br />
-
+                    <b>PARTE 3 -</b> Usando os methodos "math.min", "math.max" e "forEach":<br /><br />
                     <span id="dia_menor_valor3">O dia *aguardando definição* foi o dia</span> de menor valor de
                     faturamento no mês com o valor: <span id="menor_valor_dia3">*aguardando definição*</span><br />
                     <span id="dia_maior_valor3">O dia *aguardando definição* foi o dia</span> de maior valor de
@@ -415,24 +447,31 @@
                         <br />
                         Para resolver está questão vamos seguir os seguintes passos:<br />
                         <br />
-                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
-                        2- Usando outro for loop testo os valores dentro dos objetos no array da mesma forma como testei na primeira resolução, comparando os valores com os registrado até termos a lista dos maiores valores, menores valores e valores acima da média.<br />
-                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos venda os itens nas listas de dias estão já em ordem<br />
-                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        1- Usando o mesmo for loop para coletar os valores de cada venda e cada dia armazenando as
+                        vendas e os dias em objetos dentro de um array<br />
+                        2- Usando outro for loop testo os valores dentro dos objetos no array da mesma forma como testei
+                        na primeira resolução, comparando os valores com os registrado até termos a lista dos maiores
+                        valores, menores valores e valores acima da média.<br />
+                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos
+                        venda os itens nas listas de dias estão já em ordem<br />
+                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados
+                        para elas<br />
                         <br />
-                        Usando methodos mais adequados as necessidades da situação que estamos enfrentando facilita muito a leitura e o entendimento do codigo.<br />
-                        Ainda é importante o bom uso de comentários no codigo para que fique realmente mais legível.<br />
-                        Essa resolução tem o mesmo problema que a resolução anterior tem, só podemos identicar o primeiro dia de menor vendas e o maior dia de vendas, como comentei antes podemos resolver essa questão editando os methodos e suas funções permitindo mais de um dia de maior venda ou menor venda.<br />
+                        Usando methodos mais adequados as necessidades da situação que estamos enfrentando facilita
+                        muito a leitura e o entendimento do codigo.<br />
+                        Ainda é importante o bom uso de comentários no codigo para que fique realmente mais
+                        legível.<br />
+                        Essa resolução tem o mesmo problema que a resolução anterior tem, só podemos identicar o
+                        primeiro dia de menor vendas e o maior dia de vendas, como comentei antes podemos resolver essa
+                        questão editando os methodos e suas funções permitindo mais de um dia de maior venda ou menor
+                        venda.<br />
                         <br />
-                        Total de linhas usadas no codigo: <b>61</b>    
+                        Total de linhas usadas no codigo: <b>61</b>
                     </p>
                 </div>
                 <div>
-                    <h4>Resposta 2</h4>
-                    Usando OBJETO:<br />
-                    <b>*IMPORTANTE!!!*</b><br />
-                    Leia cada explicação para entender as limitações de cada situação quando houver.<br /><br />
-                    <b>PARTE 1 -</b> Sem usar method para achar os valores:<br />
+                    <b>Usando OBJETO:</b><br /><br />
+                    <b>PARTE 4 -</b> Sem usar method para achar os valores:<br /><br />
 
                     <span id="dia_menor_valor4">O dia *aguardando definição* foi o dia</span> de menor valor de
                     faturamento no mês com o valor: <span id="menor_valor_dia4">*aguardando definição*</span><br />
@@ -450,21 +489,29 @@
                         <br />
                         Para resolver está questão sem usar method vamos seguir os seguintes passos:<br />
                         <br />
-                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
-                        2- Usando outro for loop para testar os valores dentro dos objetos no array da mesma forma como testei na primeira resolução, comparando os valores com os registrado até termos a lista dos maiores valores, menores valores e valores acima da média.<br />
-                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos venda teremos os itens nas listas de dias estão já em ordem<br />
-                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e
+                        os dias em objetos dentro de um array<br />
+                        2- Usando outro for loop para testar os valores dentro dos objetos no array da mesma forma como
+                        testei na primeira resolução, comparando os valores com os registrado até termos a lista dos
+                        maiores valores, menores valores e valores acima da média.<br />
+                        Como podemos testar os valores em ordem de dia crescente dentro da lista de dias onde tivemos
+                        venda teremos os itens nas listas de dias estão já em ordem<br />
+                        3- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados
+                        para elas<br />
                         <br />
-                        Usando objetos fica mais simples de identificar os dias e os valores já que eles estão sempre associados um ao outro dentro dos objetos, a leitura fica um pouco mais simples e o resultado já vem organizado em ordem crescente.<br />
-                        Também temos a vantagem de poder identificar e registrar mais de um dia de maior venda e de menor venda deixando a resposta mais completa para o usuário.<br />
-                        Combinando isso com boas práticas de programação e uso correto de comentários temos uma forma bem conveniente de resolver a questão.<br />
+                        Usando objetos fica mais simples de identificar os dias e os valores já que eles estão sempre
+                        associados um ao outro dentro dos objetos, a leitura fica um pouco mais simples e o resultado já
+                        vem organizado em ordem crescente.<br />
+                        Também temos a vantagem de poder identificar e registrar mais de um dia de maior venda e de
+                        menor venda deixando a resposta mais completa para o usuário.<br />
+                        Combinando isso com boas práticas de programação e uso correto de comentários temos uma forma
+                        bem conveniente de resolver a questão.<br />
                         <br />
-                        Total de linhas usadas no codigo: <b>77</b>    
+                        Total de linhas usadas no codigo: <b>77</b>
                     </p>
                 </div>
                 <div>
-                    <b>PARTE 2 -</b> Criando methodos e usando o methodo "groupBy": <br />
-
+                    <b>PARTE 5 -</b> Criando methodos e usando o methodo "groupBy": <br /><br />
                     <span id="dia_menor_valor5">O dia *aguardando definição* foi o dia</span> de menor valor de
                     faturamento no mês com o valor: <span id="menor_valor_dia5">*aguardando definição*</span><br />
                     <span id="dia_maior_valor5">O dia *aguardando definição* foi o dia</span> de maior valor de
@@ -481,17 +528,30 @@
                         <br />
                         Para resolver está questão vamos seguir os seguintes passos:<br />
                         <br />
-                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e os dias em objetos dentro de um array<br />
-                        2- Usando o method "groupBy" e uma função dedicada identificamos e separamos em dois arrays os dias em que a venda é maior que a média no array "sim" e os dias em que a venda é menor que a média no array "não", dentro deles estão os objetos que montamos antes<br />
-                        3- Faço um for loop com os elementos do array "sim" e concatenos os dias para fazer a lista de dias com venda acima da média que já vem em ordem crescente de dia já que o for loop está apontando para o dia e não para o valor de venda<br />
-                        4- Novamente uso o method "sort" e deixo o array inicial em ordem numérica crescente de valor de venda, assim aponto o dia de menor valor de venda e o dia de maior valor de venda e seus valores de venda também.<br />
-                        5- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados para elas<br />
+                        1- Usando um for loop para coletar os valores de cada venda e cada dia armazenando as vendas e
+                        os dias em objetos dentro de um array<br />
+                        2- Usando o method "groupBy" e uma função dedicada identificamos e separamos em dois arrays os
+                        dias em que a venda é maior que a média no array "sim" e os dias em que a venda é menor que a
+                        média no array "não", dentro deles estão os objetos que montamos antes<br />
+                        3- Faço um for loop com os elementos do array "sim" e concatenos os dias para fazer a lista de
+                        dias com venda acima da média que já vem em ordem crescente de dia já que o for loop está
+                        apontando para o dia e não para o valor de venda<br />
+                        4- Novamente uso o method "sort" e deixo o array inicial em ordem numérica crescente de valor de
+                        venda, assim aponto o dia de menor valor de venda e o dia de maior valor de venda e seus valores
+                        de venda também.<br />
+                        5- Identifico as posições onde as respostas são passadas e os valores são devidamente apontados
+                        para elas<br />
                         <br />
-                        Usando objetos e methodos fica muitos simples de identificar os dias e os valores já que eles estão sempre associados um ao outro dentro dos objetos, a leitura fica mais simples e o resultado já vem organizado em ordem crescente.<br />
-                        Em troca de ser a resposta com menor número de linhas temos a desvantagem, comparada a solução somente com objetos, de não poder identificar e registrar mais de um dia de maior venda e de menor venda deixando a resposta menos completa para o usuário.<br />
-                        Combinando essa praticidade com boas práticas de programação e uso correto de comentários temos uma forma bem conveniente e bem rápida de resolver a questão.<br />
+                        Usando objetos e methodos fica muitos simples de identificar os dias e os valores já que eles
+                        estão sempre associados um ao outro dentro dos objetos, a leitura fica mais simples e o
+                        resultado já vem organizado em ordem crescente.<br />
+                        Em troca de ser a resposta com menor número de linhas temos a desvantagem, comparada a solução
+                        somente com objetos, de não poder identificar e registrar mais de um dia de maior venda e de
+                        menor venda deixando a resposta menos completa para o usuário.<br />
+                        Combinando essa praticidade com boas práticas de programação e uso correto de comentários temos
+                        uma forma bem conveniente e bem rápida de resolver a questão.<br />
                         <br />
-                        Total de linhas usadas no codigo: <b>54</b>    
+                        Total de linhas usadas no codigo: <b>54</b>
                     </p>
                 </div>
             </div>
@@ -526,12 +586,77 @@
             </h4>
             <div name="solucao5">
                 <div>
-                    <h4>Resposta</h4>
+                    Essa questão, na teoria, poderria ser respondida de pelo menos 4 formas, como 2 das respostas seriam
+                    o uso de methodos semelhantes as 2 primeiras respostas decidi incluir apenas as duas aqui presentes
+                    e comentar sobre os outros 2 mothodos.<br /><br />
+                    <h4>Respostas</h4><br />
+                    <b>PARTE 1 -</b> Usando o method "charAt":<br /><br />
+                    <div>
+                        <div class="alinha-horizontal">
+                            <label for="q5_input1">Que frase devo inverter:</label>
+                            <textarea id="q5_input1" rows="1" cols="99" maxlength="99"
+                                placeholder="O rato roeu a roupa do rei de Roma"></textarea>
+                            <button type="submit" id="input_q51" onclick="q51()">INVERTER</button>
+                        </div>
+                        <div>
+                            Sua frase virou: <span id="retorno_q51"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="explicacao">
                     <h4>Explicação</h4>
+                    <p>
+                        O uso do method "charAt" é muito parecido com o do method "at", usando esse method buscamoso o
+                        valor do charactere na posição descrita, esta sendo maior que zero e menor ou igual ao
+                        comprimento total da string que estamos solicitando.<br />
+                        Basta seguir os seguintets passos para inverter uma string usando o method "charAt":<br /><br />
+                        1- Crie uma variável para identicar a linha de texto que iremos inverter<br />
+                        2- Confira se ela é "vazia", nesse caso podemos comparar o comprimento da linha e se ele for
+                        ZERO a linha é vazia, neste caso damos uma linha modelo para que a funnção possa demonstrar sua
+                        funcionalidade<br />
+                        3- Criamos um for loop que verifica uma variável "k" do comprimeto da linha até ZERO reduzinndo
+                        1 para cada passada<br />
+                        4- Definimos que em cada passagem do loop o ultimo charactere da linha será concatenado na nossa
+                        variável resposta usando o comando texto.charAt(k-1)<br />
+                        5- Identificamos onde enviar a linha invertida e passamos o valor para a posição correta<br />
+                    </p>
                 </div>
-
+                <div>
+                    <br />
+                    <b>PARTE 2 -</b> Usando o method "substring":<br /><br />
+                    <div>
+                        <div class="alinha-horizontal">
+                            <label for="q5_input2">Que frase devo inverter:</label>
+                            <textarea id="q5_input2" rows="1" cols="99" maxlength="99"
+                                placeholder="O rato roeu a roupa do rei de Roma"></textarea>
+                            <button type="submit" id="input_q52" onclick="q52()">INVERTER</button>
+                        </div>
+                        <div>
+                            Sua frase virou: <span id="retorno_q52"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="explicacao">
+                    <h4>Explicação</h4>
+                    <p>
+                        O uso do method "substring" é muito parecido com o do method "slice", usando esse method
+                        "cortamos" a linha charactere de uma posição descrita até a outra, estas sendo diferentes entre
+                        sí, maiores que zero e menores ou igual ao comprimento total da string que estamos
+                        solicitando.<br />
+                        Basta seguir os seguintets passos para inverter uma string usando o method
+                        "substring":<br /><br />
+                        1- Crie uma variável para identicar a linha de texto que iremos inverter<br />
+                        2- Confira se ela é "vazia", nesse caso podemos comparar o comprimento da linha e se ele for
+                        ZERO a linha é vazia, neste caso damos uma linha modelo para que a funnção possa demonstrar sua
+                        funcionalidade<br />
+                        3- Criamos um for loop que verifica uma variável "k" do comprimeto da linha até ZERO reduzinndo
+                        1 para cada passada<br />
+                        4- Definimos que em cada passagem do loop o ultimo charactere da linha será concatenado na nossa
+                        variável resposta usando o comando texto.substring(k-1,k), que vai retornar somente o ultimo
+                        charactere da linha<br />
+                        5- Identificamos onde enviar a linha invertida e passamos o valor para a posição correta<br />
+                    </p>
+                </div>
             </div>
         </div>
     </div>

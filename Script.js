@@ -103,92 +103,111 @@ async function coleta() {
   } //fazemos isso até que todos os valores tenham sido atualizados
 }
 
-function q311() {//A função q311 é a primeira proposta de resolução para a questão 3
-  let apurado = [];//Nomeamos e definimos as variáveis para evitar problemas de inconsistência 
-  let posicao = [];//Quando a variável é nomeada e definida devemos usar a notação "literal"
-  let montante = 0;//no caso de arrays usamos [], objetos usamos {}, strings usamos "" 
-  let media = 0;//para valores numéricos podemos usar algum valor que não afete o lógica do algorismo
-  let lugar = " ";//Quando usamos a notação "literal" para definir nossas variáveis podemos deixar
-  let diaCorrigido = " ";//elas em branco ou "vazias"
-  let maior = " ";//Definir variáveis é importante para previnir que alguns mothodos como o "push"
-  let menor = " ";//que é usado na construção do array permitindo você inserir novos valores sem ter 
-  let posiMaior;//que manualmente escrever um por um no array já na declaração do mesmo funcionem
-  let posiMenor;//esse tipo de method é definido por tipo de dado, ou seja, não podemos usar
-  let posiAcima;//o "push" em uma string, assim como não podemos usar "concat" em objetos ou números
-  for (let k = 1; k < 30; k++) {//Definimos um loop for que vai verificar o valor k do 0 até 30
-    let d = "valor_" + k;//sempre que passarmos por um valor k iremos definir uma variável d como sendo a id
+function q311() {
+  //A função q311 é a primeira proposta de resolução para a questão 3
+  let apurado = []; //Nomeamos e definimos as variáveis para evitar problemas de inconsistência
+  let posicao = []; //Quando a variável é nomeada e definida devemos usar a notação "literal"
+  let montante = 0; //no caso de arrays usamos [], objetos usamos {}, strings usamos ""
+  let media = 0; //para valores numéricos podemos usar algum valor que não afete o lógica do algorismo
+  let lugar = " "; //Quando usamos a notação "literal" para definir nossas variáveis podemos deixar
+  let diaCorrigido = " "; //elas em branco ou "vazias"
+  let maior = " "; //Definir variáveis é importante para previnir que alguns mothodos como o "push"
+  let menor = " "; //que é usado na construção do array permitindo você inserir novos valores sem ter
+  let posiMaior; //que manualmente escrever um por um no array já na declaração do mesmo funcionem
+  let posiMenor; //esse tipo de method é definido por tipo de dado, ou seja, não podemos usar
+  let posiAcima; //o "push" em uma string, assim como não podemos usar "concat" em objetos ou números
+  for (let k = 1; k < 30; k++) {
+    //Definimos um loop for que vai verificar o valor k do 0 até 30
+    let d = "valor_" + k; //sempre que passarmos por um valor k iremos definir uma variável d como sendo a id
     //do elemento dia que queremos, se não definirmos ela aqui dentro o valor definido na primeira volta iria
     //persistir no endereço de memória referente a variável d e isso poderia causar erros.
-    let dia = document.getElementById(d).value;//a variável dia busca o valor no elemento de id= valor_k
-    lugar = parseFloat(dia);//parseFloat converte para "Float", um formato de número com casas decimais
-    if (isNaN(lugar)) {//caso o valor vindo da conversão parseFloat não for um número 
-      lugar = 0;//definimos ele como sendo zero.
+    let dia = document.getElementById(d).value; //a variável dia busca o valor no elemento de id= valor_k
+    lugar = parseFloat(dia); //parseFloat converte para "Float", um formato de número com casas decimais
+    if (isNaN(lugar)) {
+      //caso o valor vindo da conversão parseFloat não for um número
+      lugar = 0; //definimos ele como sendo zero.
     }
-    if (lugar != 0) {//se tudo estiver certo até aqui e o resultado da conversão parseFloat for diferente de zero
-      montante = montante + lugar;//somamos ele na variável montante usada para saber o total vendido no mês
-      apurado.push(lugar);//inserimos os valor no array apurado, onde os valores de venda são guardados
-      posicao.push(k);//e o dia na mesma posição no array posicao, assim podemos sempre saber de quando ele é
+    if (lugar != 0) {
+      //se tudo estiver certo até aqui e o resultado da conversão parseFloat for diferente de zero
+      montante = montante + lugar; //somamos ele na variável montante usada para saber o total vendido no mês
+      apurado.push(lugar); //inserimos os valor no array apurado, onde os valores de venda são guardados
+      posicao.push(k); //e o dia na mesma posição no array posicao, assim podemos sempre saber de quando ele é
     }
-    if (k == 29) {//quando chegamos no final da comparação
-      media = montante / apurado.length;//definimos a variável media como sendo o total de vendas dividido pelos
-    }//total de dias em que a venda não foi zero
+    if (k == 29) {
+      //quando chegamos no final da comparação
+      media = montante / apurado.length; //definimos a variável media como sendo o total de vendas dividido pelos
+    } //total de dias em que a venda não foi zero
   }
-  for (let i = 0; i < apurado.length; i++) {//usamos outro loop for, agora comparando i com o total de dias com venda
-    diaCorrigido = posicao[i];//identificamos qual dia estamos avaliando
-    if (apurado[i] > media) {//verificamos se o valor vendido foi maior que a média
-      if (posiAcima != " ") {//se ele for maior e a string que contem os dias acima da média estiver com algo nela
-        posiAcima += ", " + diaCorrigido;//poremos virgula e espaçamento adequado.
-      } else {//caso ela esteja vazia 
-        posiAcima = diaCorrigido;//populamos ela diretamente com o dia que estamos olhando hoje, sem virgulas e espaço
+  for (let i = 0; i < apurado.length; i++) {
+    //usamos outro loop for, agora comparando i com o total de dias com venda
+    diaCorrigido = posicao[i]; //identificamos qual dia estamos avaliando
+    if (apurado[i] > media) {
+      //verificamos se o valor vendido foi maior que a média
+      if (posiAcima != " ") {
+        //se ele for maior e a string que contem os dias acima da média estiver com algo nela
+        posiAcima += ", " + diaCorrigido; //poremos virgula e espaçamento adequado.
+      } else {
+        //caso ela esteja vazia
+        posiAcima = diaCorrigido; //populamos ela diretamente com o dia que estamos olhando hoje, sem virgulas e espaço
       }
-    }//caso o valor seja menor ele segue sem mudar a lista de dias acima da média
-    if (diaCorrigido != posiMaior && apurado[i] == maior) {//conferimos se o valor é igual ao maior valor já existente
-      posiMaior += ", " + diaCorrigido;//se for concatenamos ele com o dia já registrado usando virgula e espaçamento
-    }//neste caso verificamos se o dia que estamos é diferente do que já temos anotado, isso evita repetição da data
-    if (i != 0 && apurado[i] > maior) {//conferimos se o valor é maior que maior valor que já existente
-      maior = apurado[i].toString();//se ele for maior ele passará a ser o novo maior valor
-      posiMaior = diaCorrigido;//e o dia que estamos vira o novo dia do maior valor
-    }//justamente por conta dessa ultima declaração que verificamos antes se o dia do maior valor era diferente ou não
-    if (i != 0 && apurado[i] < maior) {//conferimos se o valor é menor que maior valor que já existente
-      if (menor == " ") {//se ele for temos que conferir se já existe um menor valor de venda
-        menor = apurado[i].toString();//se não tivemos o menor valor de venda definimos ele
-        posiMenor = diaCorrigido;//e seu dia
+    } //caso o valor seja menor ele segue sem mudar a lista de dias acima da média
+    if (diaCorrigido != posiMaior && apurado[i] == maior) {
+      //conferimos se o valor é igual ao maior valor já existente
+      posiMaior += ", " + diaCorrigido; //se for concatenamos ele com o dia já registrado usando virgula e espaçamento
+    } //neste caso verificamos se o dia que estamos é diferente do que já temos anotado, isso evita repetição da data
+    if (i != 0 && apurado[i] > maior) {
+      //conferimos se o valor é maior que maior valor que já existente
+      maior = apurado[i].toString(); //se ele for maior ele passará a ser o novo maior valor
+      posiMaior = diaCorrigido; //e o dia que estamos vira o novo dia do maior valor
+    } //justamente por conta dessa ultima declaração que verificamos antes se o dia do maior valor era diferente ou não
+    if (i != 0 && apurado[i] < maior) {
+      //conferimos se o valor é menor que maior valor que já existente
+      if (menor == " ") {
+        //se ele for temos que conferir se já existe um menor valor de venda
+        menor = apurado[i].toString(); //se não tivemos o menor valor de venda definimos ele
+        posiMenor = diaCorrigido; //e seu dia
       }
-      if (menor == apurado[i] && diaCorrigido != posiMenor) {//caso dois dias tenham o menor valor
-        posiMenor += ", " + diaCorrigido;//o novo dia é concatenado, mas o valor não precisa mudar
-      }//mas isso só quando o dia que estamos verificando for diferente do dia de menor venda
-      if (menor > apurado[i]) {//caso ele seja menor que o menor valor já anotado
-        menor = apurado[i].toString();//ele toma seu lugar
-        posiMenor = diaCorrigido;//e seu dia é anotado no dia de menor venda
+      if (menor == apurado[i] && diaCorrigido != posiMenor) {
+        //caso dois dias tenham o menor valor
+        posiMenor += ", " + diaCorrigido; //o novo dia é concatenado, mas o valor não precisa mudar
+      } //mas isso só quando o dia que estamos verificando for diferente do dia de menor venda
+      if (menor > apurado[i]) {
+        //caso ele seja menor que o menor valor já anotado
+        menor = apurado[i].toString(); //ele toma seu lugar
+        posiMenor = diaCorrigido; //e seu dia é anotado no dia de menor venda
       }
     }
-    if (i == 0) {//quando o i for zero temos um caso especial, ele é o primeiro dia avaliado
-      maior = apurado[i].toString();//por isso o valor aqui é o maior que temos inevitavelmente
-      posiMaior = diaCorrigido;//e seu dia é registrado também
+    if (i == 0) {
+      //quando o i for zero temos um caso especial, ele é o primeiro dia avaliado
+      maior = apurado[i].toString(); //por isso o valor aqui é o maior que temos inevitavelmente
+      posiMaior = diaCorrigido; //e seu dia é registrado também
     }
-  }//concluido o loop for temos a lista de dias acima da média, de maior venda e menor venda 
-  let dMenor = document.getElementById("dia_menor_valor1");//definimos as posições para os valores
-  let vMenor = document.getElementById("menor_valor_dia1");//que iremos informar como resposta
+  } //concluido o loop for temos a lista de dias acima da média, de maior venda e menor venda
+  let dMenor = document.getElementById("dia_menor_valor1"); //definimos as posições para os valores
+  let vMenor = document.getElementById("menor_valor_dia1"); //que iremos informar como resposta
   let dMaior = document.getElementById("dia_maior_valor1");
   let vMaior = document.getElementById("maior_valor_dia1");
   let dMedia = document.getElementById("dias_media1");
   let vMedia = document.getElementById("media_mensal1");
-  dMedia.innerText = "nos dias: " + posiAcima;//dias acima da média sempre vão ser mais de um
-  vMedia.innerText = media;//informamos os valores da média
-  vMaior.innerText = maior;//do maior valor vendido
-  vMenor.innerText = menor;//do menor
-  if (typeof posiMaior == String) {//testamos para ver se temos mais de um dia com maior venda
-    dMaior.innerText = "Os dias " + posiMaior + " foram os dias";//usamos plural caso sim
-  } else dMaior.innerText = "O dia " + posiMaior + " foi o dia";//singular caso não
-  if (typeof posiMenor == String) {//testamos para ver se temos mais de um dia com menor venda
-    dMenor.innerText = "Os dias " + posiMenor + " foram os dias";//usamos plural caso sim
-  } else dMenor.innerText = "O dia " + posiMenor + " foi o dia";//singular caso não
+  dMedia.innerText = "nos dias: " + posiAcima; //dias acima da média sempre vão ser mais de um
+  vMedia.innerText = media; //informamos os valores da média
+  vMaior.innerText = maior; //do maior valor vendido
+  vMenor.innerText = menor; //do menor
+  if (typeof posiMaior == String) {
+    //testamos para ver se temos mais de um dia com maior venda
+    dMaior.innerText = "Os dias " + posiMaior + " foram os dias"; //usamos plural caso sim
+  } else dMaior.innerText = "O dia " + posiMaior + " foi o dia"; //singular caso não
+  if (typeof posiMenor == String) {
+    //testamos para ver se temos mais de um dia com menor venda
+    dMenor.innerText = "Os dias " + posiMenor + " foram os dias"; //usamos plural caso sim
+  } else dMenor.innerText = "O dia " + posiMenor + " foi o dia"; //singular caso não
 }
 
-function q312() {//A função q312 é a segunda proposta de resolução para a questão 3
-  let apurado = [];//como na função q311 tambem definimos e nomeamos as variáveis importantes
-  let posicao = [];//no caso desta função, q312, é ainda mais importante já que iremos usar mais methodos
-  let arrayValores = [];//e eles só funcionam em array.
+function q312() {
+  //A função q312 é a segunda proposta de resolução para a questão 3
+  let apurado = []; //como na função q311 tambem definimos e nomeamos as variáveis importantes
+  let posicao = []; //no caso desta função, q312, é ainda mais importante já que iremos usar mais methodos
+  let arrayValores = []; //e eles só funcionam em array.
   let posiAcima = [];
   let armazen = [];
   let montante = 0;
@@ -200,59 +219,68 @@ function q312() {//A função q312 é a segunda proposta de resolução para a q
   let posiMenor = " ";
   let posAcima;
   let diaCorrigido = " ";
-  for (let k = 1; k < 30; k++) {//Definimos um loop for que vai verificar o valor k do 0 até 30
-    let d = "valor_" + k;//sempre que passarmos por um valor k iremos definir uma variável d como sendo a id
+  for (let k = 1; k < 30; k++) {
+    //Definimos um loop for que vai verificar o valor k do 0 até 30
+    let d = "valor_" + k; //sempre que passarmos por um valor k iremos definir uma variável d como sendo a id
     //do elemento dia que queremos, se não definirmos ela aqui dentro o valor definido na primeira volta iria
     //persistir no endereço de memória referente a variável d e isso poderia causar erros.
-    let dia = document.getElementById(d).value;//a variável dia busca o valor no elemento de id= valor_k
-    lugar = parseFloat(dia);//parseFloat converte para "Float", um formato de número com casas decimais
-    if (isNaN(lugar)) {//caso o valor vindo da conversão parseFloat não for um número 
-      lugar = 0;//definimos ele como sendo zero.
+    let dia = document.getElementById(d).value; //a variável dia busca o valor no elemento de id= valor_k
+    lugar = parseFloat(dia); //parseFloat converte para "Float", um formato de número com casas decimais
+    if (isNaN(lugar)) {
+      //caso o valor vindo da conversão parseFloat não for um número
+      lugar = 0; //definimos ele como sendo zero.
     }
-    if (lugar != 0) {//se tudo estiver certo até aqui e o resultado da conversão parseFloat for diferente de zero
-      montante = montante + lugar;//somamos ele na variável montante usada para saber o total vendido no mês
-      apurado.push(lugar);//inserimos os valor no array apurado, onde os valores de venda são guardados
-      posicao.push(k);//e o dia na mesma posição no array posicao, assim podemos sempre saber de quando ele é
+    if (lugar != 0) {
+      //se tudo estiver certo até aqui e o resultado da conversão parseFloat for diferente de zero
+      montante = montante + lugar; //somamos ele na variável montante usada para saber o total vendido no mês
+      apurado.push(lugar); //inserimos os valor no array apurado, onde os valores de venda são guardados
+      posicao.push(k); //e o dia na mesma posição no array posicao, assim podemos sempre saber de quando ele é
     }
-    if (k == 29) {//quando chegamos no final da comparação
-      media = montante / apurado.length;//definimos a variável media como sendo o total de vendas dividido pelos
-    //total de dias em que a venda não foi zero
-      armazen = apurado.slice();//criamos um novo array para conter os valores de apurado que não aponte para
-    }//a mesma posição na memoria, se informarmos que armazen = apurado sem usar o method "slice"
+    if (k == 29) {
+      //quando chegamos no final da comparação
+      media = montante / apurado.length; //definimos a variável media como sendo o total de vendas dividido pelos
+      //total de dias em que a venda não foi zero
+      armazen = apurado.slice(); //criamos um novo array para conter os valores de apurado que não aponte para
+    } //a mesma posição na memoria, se informarmos que armazen = apurado sem usar o method "slice"
     //mesmo que o method esteja vazio de mudanças a gualdade inferida iria informar ao codigo que os dois podem
-  }//ter o mesmo endereço, daí se mudarmos armazen de alguma forma iriamos também mudar o array apurado
-  arrayValores = armazen.sort(function (a, b) {//Usamos o method sort para organizar arrays, normalmente ele
-    return a - b;//é usado paraorganizar strings dentro de um array, mas usando a função de comparação (a,b)
-  }//ele compara dois valores do array, essa comparação é do tipo a - b, os rezultados podem ser, negativos, zero
-)//e positivos. Quando o resultado é negativo b é maios que a e por isso vem depois, quando é zero b=a então não
-;//importa a ordem mas quando é positivo sabemos que b é menor que a e por isso deve vir na frente, assim o method
-//sort faz a organização crescente dos valores do array
-  maior = arrayValores[arrayValores.length - 1];//a ultima posição do array é o maior valor
-  menor = arrayValores[0];//a primeira o menor
-  posiMaior = posicao[apurado.indexOf(maior)];//usando o method "indexOf" achamos o lugar dele no array
-  posiMenor = posicao[apurado.indexOf(menor)];//e assim definimos a posição do dia que eles representam
-  function maiorQueMedia(value, index, array) {//usamos a mesma ideia do sort para pegar valores de venda
-    return value > media;//meiores que a média e converter eles em um array, mas nesse caso ela vai nos
-  }//dar o primeiro e menor valor que é maior que a média
-  let primeiroMedia = arrayValores.find(maiorQueMedia);//usamos essa nova função no method "find"
-  let posiPrimeiroMedia = arrayValores.indexOf(primeiroMedia);//e o method "indexOf" para saber onde ele
-  let totalMedia = arrayValores.length - posiPrimeiroMedia;//está começando para comparar com o tamanho do
-  for (let i = 0; i < totalMedia; i++) {//array em um loop for
+  } //ter o mesmo endereço, daí se mudarmos armazen de alguma forma iriamos também mudar o array apurado
+  arrayValores = armazen.sort(
+    function (a, b) {
+      //Usamos o method sort para organizar arrays, normalmente ele
+      return a - b; //é usado paraorganizar strings dentro de um array, mas usando a função de comparação (a,b)
+    } //ele compara dois valores do array, essa comparação é do tipo a - b, os rezultados podem ser, negativos, zero
+  ); //e positivos. Quando o resultado é negativo b é maios que a e por isso vem depois, quando é zero b=a então não //importa a ordem mas quando é positivo sabemos que b é menor que a e por isso deve vir na frente, assim o method
+  //sort faz a organização crescente dos valores do array
+  maior = arrayValores[arrayValores.length - 1]; //a ultima posição do array é o maior valor
+  menor = arrayValores[0]; //a primeira o menor
+  posiMaior = posicao[apurado.indexOf(maior)]; //usando o method "indexOf" achamos o lugar dele no array
+  posiMenor = posicao[apurado.indexOf(menor)]; //e assim definimos a posição do dia que eles representam
+  function maiorQueMedia(value, index, array) {
+    //usamos a mesma ideia do sort para pegar valores de venda
+    return value > media; //meiores que a média e converter eles em um array, mas nesse caso ela vai nos
+  } //dar o primeiro e menor valor que é maior que a média
+  let primeiroMedia = arrayValores.find(maiorQueMedia); //usamos essa nova função no method "find"
+  let posiPrimeiroMedia = arrayValores.indexOf(primeiroMedia); //e o method "indexOf" para saber onde ele
+  let totalMedia = arrayValores.length - posiPrimeiroMedia; //está começando para comparar com o tamanho do
+  for (let i = 0; i < totalMedia; i++) {
+    //array em um loop for
     diaCorrigido =
       posicao[apurado.indexOf(arrayValores[posiPrimeiroMedia + i])];
-    posiAcima.push(diaCorrigido);//assim colocamos todos os dias que tem valor maior que a média num array
+    posiAcima.push(diaCorrigido); //assim colocamos todos os dias que tem valor maior que a média num array
   }
-  posAcima = posiAcima.sort(function (a, b) {//usando novamente o method "sort" organizamos eles em ordem
-    return a - b;//crescente do menor para o maior.
-  }//não podemos usar o method sem declarar ele, mas podemos nos aproveitar da declaração de igualdade 
-);//para modificar o array que iramos usar diretamente
-  let dMenor = document.getElementById("dia_menor_valor2");//apontamos as posições node vamos inserir as
-  let vMenor = document.getElementById("menor_valor_dia2");//respostas que obtivemos
+  posAcima = posiAcima.sort(
+    function (a, b) {
+      //usando novamente o method "sort" organizamos eles em ordem
+      return a - b; //crescente do menor para o maior.
+    } //não podemos usar o method sem declarar ele, mas podemos nos aproveitar da declaração de igualdade
+  ); //para modificar o array que iramos usar diretamente
+  let dMenor = document.getElementById("dia_menor_valor2"); //apontamos as posições node vamos inserir as
+  let vMenor = document.getElementById("menor_valor_dia2"); //respostas que obtivemos
   let dMaior = document.getElementById("dia_maior_valor2");
   let vMaior = document.getElementById("maior_valor_dia2");
   let dMedia = document.getElementById("dias_media2");
-  let vMedia = document.getElementById("media_mensal2");//por ultimo
-  dMedia.innerText = "nos dias: " + posiAcima;//declaramos os valores de venda e os dias com seus valores
+  let vMedia = document.getElementById("media_mensal2"); //por ultimo
+  dMedia.innerText = "nos dias: " + posiAcima; //declaramos os valores de venda e os dias com seus valores
   vMedia.innerText = media;
   vMaior.innerText = maior;
   vMenor.innerText = menor;
@@ -260,9 +288,10 @@ function q312() {//A função q312 é a segunda proposta de resolução para a q
   dMenor.innerText = "O dia " + posiMenor + " foi o dia";
 }
 
-function q313() {//A função q313 é a terceira proposta de resolução para a questão 3
-  let apurado = [];//assim como nas funções anteriores começamos nomeando e definindo as variáveis
-  let posicao = [];//dessa vez iremos usar mais methodos e por isso teremos mais arrays
+function q313() {
+  //A função q313 é a terceira proposta de resolução para a questão 3
+  let apurado = []; //assim como nas funções anteriores começamos nomeando e definindo as variáveis
+  let posicao = []; //dessa vez iremos usar mais methodos e por isso teremos mais arrays
   let acima = [];
   let posiAcima = [];
   let diaCorrigido = [];
@@ -273,7 +302,8 @@ function q313() {//A função q313 é a terceira proposta de resolução para a 
   let menor = " ";
   let posiMaior = " ";
   let posiMenor = " ";
-  for (let k = 1; k < 30; k++) {//novamente usamos um loop for para coletar os valores de cada dia
+  for (let k = 1; k < 30; k++) {
+    //novamente usamos um loop for para coletar os valores de cada dia
     let d = "valor_" + k;
     let dia = document.getElementById(d).value;
     lugar = parseFloat(dia);
@@ -289,33 +319,38 @@ function q313() {//A função q313 é a terceira proposta de resolução para a 
       media = montante / apurado.length;
     }
   }
-  function apuradoMax(array) {//definimos um method que usa arrays e identifica o maior valor
-    return Math.max.apply(null, array);//usamos o method "Math.max" para compara valores em uma
-  }//string e forçamos o array a ser enterpretado como uma string
-  function apuradoMin(array) {//definimos um method que usa arrays e identifica o menor valor
-    return Math.min.apply(null, array);//usamos o method "Math.min" para compara valores em uma
-  }//string e forçamos o array a ser enterpretado como uma string
-  maior = apuradoMax(apurado);//usamos o method que criamos no array com os valores e teremos o maior
-  menor = apuradoMin(apurado);//usamos o method que criamos no array com os valores e teremos o menor
-  posiMaior = posicao[apurado.indexOf(maior)];//usamos o mehtod "indexOf" para achar o dia do valor maior
-  posiMenor = posicao[apurado.indexOf(menor)];//usamos o mehtod "indexOf" para achar o dia do valor menor
-  function passaDaMedia(array) {//montamos um method para criar um array quando o valor for maior que a
-    return array > media;//média
+  function apuradoMax(array) {
+    //definimos um method que usa arrays e identifica o maior valor
+    return Math.max.apply(null, array); //usamos o method "Math.max" para compara valores em uma
+  } //string e forçamos o array a ser enterpretado como uma string
+  function apuradoMin(array) {
+    //definimos um method que usa arrays e identifica o menor valor
+    return Math.min.apply(null, array); //usamos o method "Math.min" para compara valores em uma
+  } //string e forçamos o array a ser enterpretado como uma string
+  maior = apuradoMax(apurado); //usamos o method que criamos no array com os valores e teremos o maior
+  menor = apuradoMin(apurado); //usamos o method que criamos no array com os valores e teremos o menor
+  posiMaior = posicao[apurado.indexOf(maior)]; //usamos o mehtod "indexOf" para achar o dia do valor maior
+  posiMenor = posicao[apurado.indexOf(menor)]; //usamos o mehtod "indexOf" para achar o dia do valor menor
+  function passaDaMedia(array) {
+    //montamos um method para criar um array quando o valor for maior que a
+    return array > media; //média
   }
-  acima = apurado.filter(passaDaMedia);//usamos o method "filter" para separar os valores segundo a função
-  acima.forEach((element) => {//depois usamos o method "forEach" para converter os valores em dias
+  acima = apurado.filter(passaDaMedia); //usamos o method "filter" para separar os valores segundo a função
+  acima.forEach((element) => {
+    //depois usamos o method "forEach" para converter os valores em dias
     diaCorrigido.push(posicao[apurado.indexOf(element)]);
   });
-  posiAcima = diaCorrigido.sort(function (a, b) {//usamos o method "sort" para por em ordem crescente
+  posiAcima = diaCorrigido.sort(function (a, b) {
+    //usamos o method "sort" para por em ordem crescente
     return a - b;
   });
-  let dMenor = document.getElementById("dia_menor_valor3");//definimos as posições onde os valores vão
+  let dMenor = document.getElementById("dia_menor_valor3"); //definimos as posições onde os valores vão
   let vMenor = document.getElementById("menor_valor_dia3");
   let dMaior = document.getElementById("dia_maior_valor3");
   let vMaior = document.getElementById("maior_valor_dia3");
   let dMedia = document.getElementById("dias_media3");
   let vMedia = document.getElementById("media_mensal3");
-  dMedia.innerText = "nos dias: " + posiAcima;//e por ultimo informamos os valores
+  dMedia.innerText = "nos dias: " + posiAcima; //e por ultimo informamos os valores
   vMedia.innerText = media;
   vMaior.innerText = maior;
   vMenor.innerText = menor;
@@ -323,8 +358,9 @@ function q313() {//A função q313 é a terceira proposta de resolução para a 
   dMenor.innerText = "O dia " + posiMenor + " foi o dia";
 }
 
-function q321() {//A função q321 é a quarta proposta de resolução para a questão 3
-  let vendas = [];//novamente nomeamos e definimos as variáveis que iremos usar
+function q321() {
+  //A função q321 é a quarta proposta de resolução para a questão 3
+  let vendas = []; //novamente nomeamos e definimos as variáveis que iremos usar
   let media = 0;
   let maior = 0;
   let menor = 0;
@@ -332,7 +368,8 @@ function q321() {//A função q321 é a quarta proposta de resolução para a qu
   let posiMaior;
   let posiMenor = " ";
   let posiAcima = " ";
-  for (let k = 1; k < 30; k++) {//usamos um for loop para montar os objetos
+  for (let k = 1; k < 30; k++) {
+    //usamos um for loop para montar os objetos
     let d = "valor_" + k;
     let dia = document.getElementById(d).value;
     let lugar = parseFloat(dia);
@@ -341,69 +378,83 @@ function q321() {//A função q321 é a quarta proposta de resolução para a qu
     }
     if (lugar != 0) {
       montante = montante + lugar;
-      let elemento = {};//cada objeto tem que ser definido dentro da função
-      elemento.valor = lugar;//se ele for definido antes estaremos sempre modificando o mesmo objeto
-      elemento.dia = k;//e os valores para as posições dia e valor iriam ser iguais ao ultimo dia apenas
-      vendas.push(elemento);//depois colocamos esse objeto dentro do array
+      let elemento = {}; //cada objeto tem que ser definido dentro da função
+      elemento.valor = lugar; //se ele for definido antes estaremos sempre modificando o mesmo objeto
+      elemento.dia = k; //e os valores para as posições dia e valor iriam ser iguais ao ultimo dia apenas
+      vendas.push(elemento); //depois colocamos esse objeto dentro do array
     }
     if (k == 29) {
       media = montante / vendas.length;
     }
   }
-  for (let i = 0; i < vendas.length; i++) {//criamos outro for loop para conferir os valores internos
-    let diaCorrigido = vendas[i].dia;//como é mais facil escrever diaCorrido que vendas[i].dia indexei o valor
-    if (vendas[i].valor >= media) {//comparamos os valores dos objetos internos do array
-      if (posiAcima != " ") {//quando já existir registro de dia na variável concatenamos virgulas e espaços
-        posiAcima += ", " + diaCorrigido;//alem do dia
-      } else {//se não tiver ele é o primeiro dia na variável
+  for (let i = 0; i < vendas.length; i++) {
+    //criamos outro for loop para conferir os valores internos
+    let diaCorrigido = vendas[i].dia; //como é mais facil escrever diaCorrido que vendas[i].dia indexei o valor
+    if (vendas[i].valor >= media) {
+      //comparamos os valores dos objetos internos do array
+      if (posiAcima != " ") {
+        //quando já existir registro de dia na variável concatenamos virgulas e espaços
+        posiAcima += ", " + diaCorrigido; //alem do dia
+      } else {
+        //se não tiver ele é o primeiro dia na variável
         posiAcima = diaCorrigido;
       }
     }
-    if (maior == 0) {//quando for o primeiro número a ser comparado ele será o maior
+    if (maior == 0) {
+      //quando for o primeiro número a ser comparado ele será o maior
       maior = vendas[i].valor;
-      posiMaior = diaCorrigido;//e seu dia será registrado
+      posiMaior = diaCorrigido; //e seu dia será registrado
     }
-    if (vendas[i].valor == maior && posiMaior != diaCorrigido) {//no caso de existir um valor igual ao maior
-      posiMaior += ", " + diaCorrigido;//seu dia é concatenado ao dia do primeiro com virgula e espaço
+    if (vendas[i].valor == maior && posiMaior != diaCorrigido) {
+      //no caso de existir um valor igual ao maior
+      posiMaior += ", " + diaCorrigido; //seu dia é concatenado ao dia do primeiro com virgula e espaço
     }
-    if (vendas[i].valor > maior && posiMaior != diaCorrigido) {//se ele for maior que o maior até então
-      maior = vendas[i].valor;//ele toma seu lugar
-      posiMaior = diaCorrigido;//e sua posição é registrada
+    if (vendas[i].valor > maior && posiMaior != diaCorrigido) {
+      //se ele for maior que o maior até então
+      maior = vendas[i].valor; //ele toma seu lugar
+      posiMaior = diaCorrigido; //e sua posição é registrada
     }
-    if (vendas[i].valor < maior) {//se ele for menor 
-      if (vendas[i].valor < menor) {//ele pode ser o menor de todos os valores
-        menor = vendas[i].valor;//ele toma seu lugar
-        posiMenor = diaCorrigido;//e seu dia é registrado
+    if (vendas[i].valor < maior) {
+      //se ele for menor
+      if (vendas[i].valor < menor) {
+        //ele pode ser o menor de todos os valores
+        menor = vendas[i].valor; //ele toma seu lugar
+        posiMenor = diaCorrigido; //e seu dia é registrado
       }
-      if (vendas[i].valor == menor && posiMenor != diaCorrigido) {//igual ao menor até então
-        posiMenor += ", " + diaCorrigido;//seu dia será concatenado com virgula e espaço
+      if (vendas[i].valor == menor && posiMenor != diaCorrigido) {
+        //igual ao menor até então
+        posiMenor += ", " + diaCorrigido; //seu dia será concatenado com virgula e espaço
       }
-      if (menor == 0 && posiMenor != diaCorrigido) {//ou o primeiro menor valor registrado
-        menor = vendas[i].valor;//ele se torna o menor valor
-        posiMenor = diaCorrigido;//e seu dia é registrado
+      if (menor == 0 && posiMenor != diaCorrigido) {
+        //ou o primeiro menor valor registrado
+        menor = vendas[i].valor; //ele se torna o menor valor
+        posiMenor = diaCorrigido; //e seu dia é registrado
       }
     }
   }
-  let dMenor = document.getElementById("dia_menor_valor4");//identificamos as posições onde vamos passar
-  let vMenor = document.getElementById("menor_valor_dia4");//os valores resposta
+  let dMenor = document.getElementById("dia_menor_valor4"); //identificamos as posições onde vamos passar
+  let vMenor = document.getElementById("menor_valor_dia4"); //os valores resposta
   let dMaior = document.getElementById("dia_maior_valor4");
   let vMaior = document.getElementById("maior_valor_dia4");
   let dMedia = document.getElementById("dias_media4");
   let vMedia = document.getElementById("media_mensal4");
-  dMedia.innerText = "nos dias: " + posiAcima;//passamos os dias acima da média em valor de venda
-  vMedia.innerText = media;//os valores de média, menor venda e maior venda
+  dMedia.innerText = "nos dias: " + posiAcima; //passamos os dias acima da média em valor de venda
+  vMedia.innerText = media; //os valores de média, menor venda e maior venda
   vMaior.innerText = maior;
   vMenor.innerText = menor;
-  if (typeof posiMaior == String) {//verificamos de temos mais de um dia com o maior valor
-    dMaior.innerText = "Os dias " + posiMaior + " foram os dias";//informamos eles
-  } else dMaior.innerText = "O dia " + posiMaior + " foi o dia";//ou informamos ele
-  if (typeof posiMenor == String) {//verificamos de temos mais de um dia com o menor valor
-    dMenor.innerText = "Os dias " + posiMenor + " foram os dias";//informamos eles
-  } else dMenor.innerText = "O dia " + posiMenor + " foi o dia";//ou informamos ele
+  if (typeof posiMaior == String) {
+    //verificamos de temos mais de um dia com o maior valor
+    dMaior.innerText = "Os dias " + posiMaior + " foram os dias"; //informamos eles
+  } else dMaior.innerText = "O dia " + posiMaior + " foi o dia"; //ou informamos ele
+  if (typeof posiMenor == String) {
+    //verificamos de temos mais de um dia com o menor valor
+    dMenor.innerText = "Os dias " + posiMenor + " foram os dias"; //informamos eles
+  } else dMenor.innerText = "O dia " + posiMenor + " foi o dia"; //ou informamos ele
 }
 
-function q322() {//A função q322 é a quinta proposta de resolução para a questão 3
-  let vendas = [];//iremos novamente nomear e definir as variáveis que usaremos
+function q322() {
+  //A função q322 é a quinta proposta de resolução para a questão 3
+  let vendas = []; //iremos novamente nomear e definir as variáveis que usaremos
   let media = 0;
   let maior = 0;
   let menor = 0;
@@ -411,49 +462,88 @@ function q322() {//A função q322 é a quinta proposta de resolução para a qu
   let posiMaior;
   let posiMenor = " ";
   let posiAcima = " ";
-  for (let k = 1; k < 30; k++) {//usamos um for loop para pegar os valores dos dias
-   let d = "valor_" + k;
-   let dia = document.getElementById(d).value;
-   let lugar = parseFloat(dia);
+  for (let k = 1; k < 30; k++) {
+    //usamos um for loop para pegar os valores dos dias
+    let d = "valor_" + k;
+    let dia = document.getElementById(d).value;
+    let lugar = parseFloat(dia);
     if (isNaN(lugar)) {
       lugar = 0;
     }
-    if (lugar != 0) {//se eles não forem dias sem vendas montamos um objeto com ele
+    if (lugar != 0) {
+      //se eles não forem dias sem vendas montamos um objeto com ele
       montante = montante + lugar;
-      let elemento = {};//criado aqui na função para que seus valores sejam corretos
+      let elemento = {}; //criado aqui na função para que seus valores sejam corretos
       elemento.valor = lugar;
       elemento.dia = k;
-      vendas.push(elemento);//colocamos ele dentro do array
+      vendas.push(elemento); //colocamos ele dentro do array
     }
     if (k == 29) {
       media = montante / vendas.length;
     }
   }
-  function maiorQueMedia({ valor }) {//criamos uma função que vai separar em dois arrays
-    return valor > media ? "sim" : "nao";//os que são maiores e os que não são maiores que a média
+  function maiorQueMedia({ valor }) {
+    //criamos uma função que vai separar em dois arrays
+    return valor > media ? "sim" : "nao"; //os que são maiores e os que não são maiores que a média
   }
-  let acima = Object.groupBy(vendas, maiorQueMedia);//usando o method "groupBy" o array é separado
+  let acima = Object.groupBy(vendas, maiorQueMedia); //usando o method "groupBy" o array é separado
   //de acordo com a função definida antes, ou seja, em dois arrays o "sim" e o "não"
-  for (let [x, y] of acima.sim.entries()) {//usando um for loop nos elementos do array "sim"
-    posiAcima += ", " + y.dia;//concatenamos os dias em que eles ocorrem com virgulas e espaços
+  for (let [x, y] of acima.sim.entries()) {
+    //usando um for loop nos elementos do array "sim"
+    posiAcima += ", " + y.dia; //concatenamos os dias em que eles ocorrem com virgulas e espaços
   }
-  let organizado = vendas.sort(function (a, b) {//usamos um method "sort" definido para objetos no array
+  let organizado = vendas.sort(function (a, b) {
+    //usamos um method "sort" definido para objetos no array
     return a.valor - b.valor;
   });
-  menor = organizado[0].valor;//o menor valor vai estar organizado em primeiro lugar
-  posiMenor = organizado[0].dia;//assim como seu dia
-  maior = organizado[organizado.length - 1].valor;//o maior valor vai estar organizado em ultimo lugar
-  posiMaior = organizado[organizado.length - 1].dia;//assim como seu dia
-  let dMenor = document.getElementById("dia_menor_valor5");//definimos as posições onde vamos informar os
-  let vMenor = document.getElementById("menor_valor_dia5");//valores respostas
+  menor = organizado[0].valor; //o menor valor vai estar organizado em primeiro lugar
+  posiMenor = organizado[0].dia; //assim como seu dia
+  maior = organizado[organizado.length - 1].valor; //o maior valor vai estar organizado em ultimo lugar
+  posiMaior = organizado[organizado.length - 1].dia; //assim como seu dia
+  let dMenor = document.getElementById("dia_menor_valor5"); //definimos as posições onde vamos informar os
+  let vMenor = document.getElementById("menor_valor_dia5"); //valores respostas
   let dMaior = document.getElementById("dia_maior_valor5");
   let vMaior = document.getElementById("maior_valor_dia5");
   let dMedia = document.getElementById("dias_media5");
   let vMedia = document.getElementById("media_mensal5");
-  dMedia.innerText = "nos dias: " + posiAcima.substring(2, posiAcima.length);//usamos o method "substring"
-  vMedia.innerText = media;//para cortar a primeira virgula e o primeiro espaço da lista de dias com venda 
-  vMaior.innerText = maior;//maior que a média
-  vMenor.innerText = menor;//depois informamos os valores de média, menor venda e maior venda
-  dMaior.innerText = "O dia " + posiMaior + " foi o dia";//e o dia de maior venda
-  dMenor.innerText = "O dia " + posiMenor + " foi o dia";//e menor venda
+  dMedia.innerText = "nos dias: " + posiAcima.substring(2, posiAcima.length); //usamos o method "substring"
+  vMedia.innerText = media; //para cortar a primeira virgula e o primeiro espaço da lista de dias com venda
+  vMaior.innerText = maior; //maior que a média
+  vMenor.innerText = menor; //depois informamos os valores de média, menor venda e maior venda
+  dMaior.innerText = "O dia " + posiMaior + " foi o dia"; //e o dia de maior venda
+  dMenor.innerText = "O dia " + posiMenor + " foi o dia"; //e menor venda
+}
+
+function q4() {}
+
+function q51() {
+  let element = document.getElementById("q5_input1");
+  let fraseEnviada = element.value;
+  if (fraseEnviada.length === 0) {
+    fraseEnviada = element.getAttribute("placeholder");
+  }
+  let tamanho = fraseEnviada.length;
+  let fraseInvertida = " ";
+  for (let k = tamanho; k > 0; k--) {
+    fraseInvertida += fraseEnviada.charAt(k-1);
+  }
+  let retorno = document.getElementById("retorno_q51");
+  retorno.innerText = fraseInvertida;
+}
+
+function q52() {
+  let element = document.getElementById("q5_input2");
+  let fraseEnviada = element.value;
+  if (fraseEnviada.length === 0) {
+    fraseEnviada = element.getAttribute("placeholder");
+  }
+  let tamanho = fraseEnviada.length;
+  console.log(tamanho,typeof tamanho,fraseEnviada);
+  let fraseInvertida = " ";
+  for (let k = tamanho; k > 0; k--) {
+    fraseInvertida += fraseEnviada.substring(k-1,k);
+  }
+  console.log(fraseInvertida);
+  let retorno = document.getElementById("retorno_q52");
+  retorno.innerText = fraseInvertida;
 }
