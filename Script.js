@@ -595,14 +595,3 @@ function q52() {
   let retorno = document.getElementById("retorno_q52");
   retorno.innerText = fraseInvertida;
 }
-
-function colapso(id){
-let elemento = document.getElementById(id);
-let tamanho = parseInt(elemento.getAttribute("clientHeight"));
-if (tamanho > 20) {
-elemento.getAttribute("clientHeight") = "20px";
-}
-if (tamanho == 20) {
-  elemento.getAttribute("clientHeight") = "auto";
-  }
-}
