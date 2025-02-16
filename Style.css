@@ -88,3 +88,46 @@ p{
 .explicacao{
   background-color: #f2f2f2;
 }
+
+.estado{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  width: 105px;
+  height: 20px;
+}
+.venda{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  width: 210px;
+  height: 20px;
+}
+.percentual{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  width: 120px;
+  height: 20px;
+}
+.nova_linha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: cornflowerblue;
+  cursor: pointer;
+  width: 210px;
+  height: 20px;
+}
+.sumido {
+  visibility: hidden;
+}

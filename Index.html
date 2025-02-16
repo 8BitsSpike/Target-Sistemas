@@ -557,7 +557,8 @@
             </div>
         </div>
         <div class="questao" name="Q4">
-            <h4 name="enunciado4">4. Dado o valor de faturamento mensal de uma distribuidora, detalhado por
+            <h4 name="enunciado4">
+                4. Dado o valor de faturamento mensal de uma distribuidora, detalhado por
                 estado:<br /><br />
                 • SP - R$67.836,43<br />
                 • RJ - R$36.678,66<br />
@@ -565,15 +566,139 @@
                 • ES - R$27.165,48<br />
                 • Outros - R$19.849,53<br /><br />
                 Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado
-                teve dentro do valor total mensal da distribuidora.</h4>
+                teve dentro do valor total mensal da distribuidora.
+            </h4>
             <div name="solucao4">
                 <div>
                     <h4>Resposta</h4>
+                    <div>
+                        A tabela abaixo permite que você inclua os dados que achar melhor, ela já tem como sugestão os
+                        valores indicados na questão.<br />
+                        Usando o botão "Nova Linha" você pode adicionar mais linhas na tabela e assim calcular os
+                        valores que precisar.<br /><br />
+                        <div class="centrar-coluna">
+                            <div id="espaco">
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <b>ESTADO</b>
+                                    </div>
+                                    <div class="venda">
+                                        <b>VENDAS EM R$</b>
+                                    </div>
+                                    <div class="percentual">
+                                        <b>PERCENTUAL</b>
+                                    </div>
+                                </div>
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <label for="estado_1" hidden="hidden">a</label>
+                                        <textarea id="estado_1" rows="1" cols="6" maxlength="6"
+                                            placeholder="SP"></textarea>
+                                    </div>
+                                    <div class="venda">
+                                        <label for="vendas_1" hidden="hidden">a</label>
+                                        <textarea id="vendas_1" rows="1" cols="22" maxlength="22"
+                                            placeholder="67836.43"></textarea>
+                                    </div>
+                                    <div class="percentual">
+                                        <span id="percentual_1"></span>
+                                    </div>
+                                </div>
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <label for="estado_2" hidden="hidden">a</label>
+                                        <textarea id="estado_2" rows="1" cols="6" maxlength="6"
+                                            placeholder="RJ"></textarea>
+                                    </div>
+                                    <div class="venda">
+                                        <label for="vendas_2" hidden="hidden">a</label>
+                                        <textarea id="vendas_2" rows="1" cols="22" maxlength="22"
+                                            placeholder="36678.66"></textarea>
+                                    </div>
+                                    <div class="percentual">
+                                        <span id="percentual_2"></span>
+                                    </div>
+                                </div>
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <label for="estado_3" hidden="hidden">a</label>
+                                        <textarea id="estado_3" rows="1" cols="6" maxlength="6"
+                                            placeholder="MG"></textarea>
+                                    </div>
+                                    <div class="venda">
+                                        <label for="vendas_3" hidden="hidden">a</label>
+                                        <textarea id="vendas_3" rows="1" cols="22" maxlength="22"
+                                            placeholder="29229.88"></textarea>
+                                    </div>
+                                    <div class="percentual">
+                                        <span id="percentual_3"></span>
+                                    </div>
+                                </div>
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <label for="estado_4" hidden="hidden">a</label>
+                                        <textarea id="estado_4" rows="1" cols="6" maxlength="6"
+                                            placeholder="ES"></textarea>
+                                    </div>
+                                    <div class="venda">
+                                        <label for="vendas_4" hidden="hidden">a</label>
+                                        <textarea id="vendas_4" rows="1" cols="22" maxlength="22"
+                                            placeholder="27165.48"></textarea>
+                                    </div>
+                                    <div class="percentual">
+                                        <span id="percentual_4"></span>
+                                    </div>
+                                </div>
+                                <div class="alinha-horizontal">
+                                    <div class="estado">
+                                        <label for="estado_5" hidden="hidden">a</label>
+                                        <textarea id="estado_5" rows="1" cols="6" maxlength="6"
+                                            placeholder="OUTROS"></textarea>
+                                    </div>
+                                    <div class="venda">
+                                        <label for="vendas_5" hidden="hidden">a</label>
+                                        <textarea id="vendas_5" rows="1" cols="22" maxlength="22"
+                                            placeholder="19849.53"></textarea>
+                                    </div>
+                                    <div class="percentual">
+                                        <span id="percentual_5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nova_linha" onclick="novalinha()"> + Nova linha</div>
+                            <div class="alinha-horizontal">
+                                <div class="estado">
+                                    TOTAL
+                                </div>
+                                <div class="venda">
+                                    <span id="vendas_final"></span>
+                                </div>
+                                <div class="percentual sumido">
+
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        Quando estiver satisfeito com a tabela pode calcular usando este botão:
+                        <button type="submit" id="calcular_tabela" onclick="q4()">CALCULAR</button>
+                    </div>
                 </div>
                 <div class="explicacao">
                     <h4>Explicação</h4>
+                    <p>
+                        Para determinar a participação percentual no total das vendas basta seguir estas
+                        etapas:<br /><br />
+                        1- Identificamos de onde os valores que o usuário definiu vão ser coletados<br />
+                        2- Usando um for loop coletamos os valores, conferindo se eles são válidos e caso não usamos o
+                        valor definido como placeholder para cada posição, somando cada um deles ao total de
+                        vendas<br />
+                        3- Como o total de vendas é um valor independente do percentual podemos retorna-lo para a
+                        posição correta<br />
+                        4- Usamos um segundo for loop para comparar o valor de cada posição com o total de vendas,
+                        obtendo assim o percentual de participação nas vendas, retornamos este valor para a posição
+                        correta<br />
+                    </p>
                 </div>
-
             </div>
         </div>
         <div class="questao" name="Q5">
@@ -662,6 +787,20 @@
     </div>
     <div class="centrar-coluna" name="conclusao">
         <h4>Conclusão</h4>
+        <p>
+            Neste teste prático pude exercitar minha criatividade achando novas soluções para situações que normalmente
+            tenho que ser objetivo em responder.<br />
+            Embora seja bom poder "esticar" as pernas da imaginação é importante lembrar que nem sempre o
+            resultado destes exercícios é valido para uso, mesmo estando corretas e atendendo as demandas propostas pela
+            questão algumas das respostas falham em quesitos como praticidade ou são mais "longos" em sua execução do
+            que o recomendado para uso.<br />
+            Caso você esteja visitando esta página e, possívelmente, meu repositório com objetivos de estudo é importante manter em mente que durante a resolução das questões propostas não tive preocupações como praticidade ou eficiência final das respostas que propus.<br />
+            De qualquer forma foi um enorme prazer poder fazer este teste prático, pude rever assuntos que não via já
+            algum tempo e me sinto revigorado pelo desafio que ele propôs.<br />
+            <br />
+            Logo abaixo você pode achar uma lista com meus contatos, sinta-se livre para me enviar perguntas sobre este
+            teste ou um "olá", que será sempre bem vindo.
+        </p>
     </div>
     <div class="centrar-coluna" name="contatos">
         <b>Contatos</b>
