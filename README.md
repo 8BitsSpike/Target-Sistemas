@@ -54,7 +54,7 @@ b) Evite usar funções prontas, como, por exemplo, reverse;
 
 Para a resolução deste teste decidi por usar as linguagens HTML5, CSS e Javascript já que isso me permite fazer uma apresentação visualmente mais atrativa alem de permitir demonstrar minha capacidade de raciocínico de forma dinâmica, permitindo imput de valores novos nos campos usados durante a demonstração de resolução, e acessível por permitir que qualquer pessoa possa interagir com a minha abordagem indiferente do nível de conhecimento em programação com maior facilidade.
 As funções escritas em Java Script podem ser convertidas para outras linguagens fazendo as devidas adaptações na sintaxe demonstrando a versatilidade da lógica utilizada.
-O arquivo Index.html está ospedado no endereço:
+O arquivo Index.html está ospedado no endereço: [[https://8bitsspike.github.io/Target-Sistemas/](https://8bitsspike.github.io/Target-Sistemas/)) 
 </br>
 Agradeço seu interesse na minha resolução das questões deste teste.
 
