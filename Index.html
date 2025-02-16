@@ -24,11 +24,9 @@
             dúvidas ou em receber seu "Ola!".<br />
             <br />
             AVISO:<br />
-            Algumas das questões tem mais de uma resposta, caso a explicação dada em qualquer questão não esteja clara
-            ou
-            você sinta a necessidade de acompanhar a resolução no código basta ir na página do
-            <a href="https://github.com/8BitsSpike/Target-Sistemas">repositório</a> no github para ter acesso a todos os
-            arquivos.
+            Algumas das questões tem mais de uma resposta, caso a explicação dada em qualquer questão não esteja clara ou você sinta a necessidade de acompanhar a resolução no código basta ir na página do
+            <a href="https://github.com/8BitsSpike/Target-Sistemas">repositório</a> no github para ter acesso a todos os arquivos.<br /><br />
+            Para ler as explicações basta clicar na area "Explicação" da questão, após ler pode clicar nela novamente para ocultar.
         </p><br />
     </div>
     <div class="centrar-coluna" name="teste_pratico">
@@ -61,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_1" onclick="colapso('expli_1')">
                     <h4>Explicação</h4>
                     <p>
                         Quando informamos o valor do INDICE para que a função faça o calculo as seguintes etapas vão
@@ -110,7 +108,7 @@
                         Sequência de Fibonacci até então: &#10627; <span id="q2_sequencia">0</span> &#10628;
                     </div>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_2" onclick="colapso('expli_2')">
                     <h4>Explicação</h4>
                     <p>
                         Para resolver esta questão basta montar uma função que confere se o número pertence à sequência
@@ -324,7 +322,7 @@
                     Calcular os valores:<Button type="submit" id="definir_valores_array1"
                         onclick="q311()">Calcular?</Button>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_3" onclick="colapso('expli_3')">
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os seguintes passos.<br />
@@ -384,7 +382,7 @@
                     Calcular os valores:<Button type="submit" id="definir_valores_array2"
                         onclick="q312()">Calcular?</Button>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_4" onclick="colapso('expli_4')">
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
@@ -440,7 +438,7 @@
                     Calcular os valores:<Button type="submit" id="definir_valores_array3"
                         onclick="q313()">Calcular?</Button>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_5" onclick="colapso('expli_5')">
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
@@ -482,7 +480,7 @@
                     Calcular os valores:<Button type="submit" id="definir_valores_objeto4"
                         onclick="q321()">Calcular?</Button>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_7" onclick="colapso('expli_7')">
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
@@ -521,7 +519,7 @@
                     Calcular os valores:<Button type="submit" id="definir_valores_objeto5"
                         onclick="q322()">Calcular?</Button>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_8" onclick="colapso('expli_8')">
                     <h4>Explicação</h4>
                     <p>Antes de começar a resolução da questão precisamos buscar os valores ou conferir os informados
                         pelo usuário, parar isso usamos os passos descritos na explicação anterior.<br />
@@ -683,7 +681,7 @@
                         <button type="submit" id="calcular_tabela" onclick="q4()">CALCULAR</button>
                     </div>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_9" onclick="colapso('expli_9')">
                     <h4>Explicação</h4>
                     <p>
                         Para determinar a participação percentual no total das vendas basta seguir estas
@@ -728,7 +726,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_10" onclick="colapso('expli_10')">
                     <h4>Explicação</h4>
                     <p>
                         O uso do method "charAt" é muito parecido com o do method "at", usando esse method buscamoso o
@@ -761,7 +759,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="explicacao">
+                <div class="explicacao" id="expli_11" onclick="colapso('expli_11')">
                     <h4>Explicação</h4>
                     <p>
                         O uso do method "substring" é muito parecido com o do method "slice", usando esse method

@@ -535,32 +535,37 @@ function novalinha() {
   //atualizados permitindo identificarmos os elementos corretos na hora que formos chamar por eles
 }
 
-function q4() {//A função q4 resolve a 4° questão calculando a participação nas vendas totais em percentual
-  let espaco = document.getElementById("espaco");//definimos de onde iremos buscar os elementos
-  let children = espaco.childElementCount;//contamos quandos "elementos filhos" temos
-  let totalVendas = 0;//definimos a variável para o total de vendas
-  for (let k = 1; k < children; k++) {//usamos um for loop para identificar cada elemento filho
-    let nome = "vendas_" + k;//criamos o nome do elemento que vamos usar
-    let ref = document.getElementById(nome);//fazemos uma variável que contem sua posição
-    let vendas = parseFloat(ref.value);//tentamos tornalo um valor mais preciso possível
-    if (ref.value.length === 0 || isNaN(vendas)) {//caso o usuário não tenha definido valor ou o valor for texto
-      vendas = parseFloat(ref.getAttribute("placeholder"));//usamos o valor informado no "placeholder"
+function q4() {
+  //A função q4 resolve a 4° questão calculando a participação nas vendas totais em percentual
+  let espaco = document.getElementById("espaco"); //definimos de onde iremos buscar os elementos
+  let children = espaco.childElementCount; //contamos quandos "elementos filhos" temos
+  let totalVendas = 0; //definimos a variável para o total de vendas
+  for (let k = 1; k < children; k++) {
+    //usamos um for loop para identificar cada elemento filho
+    let nome = "vendas_" + k; //criamos o nome do elemento que vamos usar
+    let ref = document.getElementById(nome); //fazemos uma variável que contem sua posição
+    let vendas = parseFloat(ref.value); //tentamos tornalo um valor mais preciso possível
+    if (ref.value.length === 0 || isNaN(vendas)) {
+      //caso o usuário não tenha definido valor ou o valor for texto
+      vendas = parseFloat(ref.getAttribute("placeholder")); //usamos o valor informado no "placeholder"
     }
-    totalVendas = totalVendas + vendas;//depois somamos o valor achado no total de vendas
+    totalVendas = totalVendas + vendas; //depois somamos o valor achado no total de vendas
   }
-  let posiTotal = document.getElementById("vendas_final");//achamos onde informar o total de vendas
-  posiTotal.innerText = totalVendas;//e passamos o valor para a posição correta
-  for (let i = 1; i < children; i++) {//criamos mais um for loop para conferir os lugares novamente
-    let nome = "vendas_" + i;//usamos o mesmo nome
-    let sobreNome = "percentual_" + i;//mas desta vez criamos o nome da posição onde o percentual vai entrar
-    let percent = document.getElementById(sobreNome);//e achamos sua posição
-    let ref = document.getElementById(nome);//novamente identificamos a posição
-    let vendas = parseFloat(ref.value);//e tentamos converter em número
-    if (ref.value.length === 0 || isNaN(vendas)) {//conferimos se o usuário informou algo naquela posição
-      vendas = parseFloat(ref.getAttribute("placeholder"));//conferimos o valor do placeholder caso não
+  let posiTotal = document.getElementById("vendas_final"); //achamos onde informar o total de vendas
+  posiTotal.innerText = totalVendas; //e passamos o valor para a posição correta
+  for (let i = 1; i < children; i++) {
+    //criamos mais um for loop para conferir os lugares novamente
+    let nome = "vendas_" + i; //usamos o mesmo nome
+    let sobreNome = "percentual_" + i; //mas desta vez criamos o nome da posição onde o percentual vai entrar
+    let percent = document.getElementById(sobreNome); //e achamos sua posição
+    let ref = document.getElementById(nome); //novamente identificamos a posição
+    let vendas = parseFloat(ref.value); //e tentamos converter em número
+    if (ref.value.length === 0 || isNaN(vendas)) {
+      //conferimos se o usuário informou algo naquela posição
+      vendas = parseFloat(ref.getAttribute("placeholder")); //conferimos o valor do placeholder caso não
     }
-    let percentual = ((vendas / totalVendas)*100).toFixed(2);//calculamos a participação no total de vendas
-    percent.innerText = percentual + "%";//e informamos na posição correta com o sinal de % concatenado nele
+    let percentual = ((vendas / totalVendas) * 100).toFixed(2); //calculamos a participação no total de vendas
+    percent.innerText = percentual + "%"; //e informamos na posição correta com o sinal de % concatenado nele
   }
 }
 
@@ -594,4 +599,14 @@ function q52() {
   console.log(fraseInvertida);
   let retorno = document.getElementById("retorno_q52");
   retorno.innerText = fraseInvertida;
+}
+
+function colapso(id) {
+  let elemento = document.getElementById(id);
+  let tamanho = elemento.style.height;
+  if (tamanho.length == 0 || tamanho == "40px") {
+    elemento.style.height = "auto";
+  } else {
+    elemento.style.height = "40px";
+  }
 }
